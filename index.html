@@ -21,7 +21,7 @@
     }
 
     .hero {
-      style = "background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v2.jpg?v=1734798111922');">
+      background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635');
       color: white;
       padding: 100px 50px;
       text-align: center;
@@ -131,9 +131,28 @@
       opacity: 1;
     }
 
-    .dropdown-info p {
-      margin: 5px 0;
-      font-size: 16px;
+    /* Destination Details */
+    .destination-details {
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+    }
+
+    .destination-box {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .destination-box p {
+      font-size: 18px;
+      margin: 10px 0;
     }
 
     /* About Section */
@@ -175,14 +194,14 @@
   <!-- Hero Section -->
   <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;);">
     <h1 id="hero-title">Budget Breeze</h1>
-    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
     <div class="plane">
       <img src="https://www.pngkey.com/png/detail/13-138255_airplane-top-view-png.png" alt="Airplane">
     </div>
-  </div>
-                                                                                          
+      <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+    </div>
+
   <!-- Dropdown Locations Section -->
-  <div class="dropdown-container">
+  <div class="dropdown-container" id="dropdown-container">
     <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
       <div class="dropdown-title">Japan</div>
       <div class="dropdown-info">
@@ -217,6 +236,26 @@
     </div>
   </div>
 
+  <!-- Destination Details -->
+  <div class="destination-details" id="destination-details" style="display: none;">
+    <div class="destination-box">
+      <h3>Fee</h3>
+      <p id="destination-fee"></p>
+    </div>
+    <div class="destination-box">
+      <h3>Accommodation</h3>
+      <p id="destination-accommodation"></p>
+    </div>
+    <div class="destination-box">
+      <h3>Guided Tours</h3>
+      <p id="destination-guided"></p>
+    </div>
+    <div class="destination-box">
+      <h3>Ratings</h3>
+      <p id="destination-ratings"></p>
+    </div>
+  </div>
+
   <!-- About Section -->
   <div class="about" id="about">
     <h2>About Budget Breeze</h2>
@@ -234,6 +273,9 @@
     // JavaScript Functionality
     document.querySelectorAll('.dropdown').forEach((tile) => {
       tile.addEventListener('click', function () {
+        // Hide all tiles
+        document.getElementById('dropdown-container').style.display = 'none';
+
         // Get the background image of the clicked tile
         const bgImage = this.style.backgroundImage;
 
@@ -247,31 +289,25 @@
         const countryName = this.querySelector('.dropdown-title').innerText;
         document.getElementById('hero-title').innerText = countryName;
 
-        // Replace the dropdown tiles with destination details
-        const container = document.querySelector('.dropdown-container');
-        container.innerHTML = `
-          <div class="destination-details">
-            <h2>${countryName}</h2>
-            <div class="details-content">
-              <p>Fee: $275/adult</p>
-              <p>Accommodation: Included</p>
-              <p>Guided Tours: Yes</p>
-              <p>Ratings: ★★★★☆</p>
-            </div>
-          </div>
-        `;
+        // Get the details of the clicked country
+        const fee = this.querySelector('.dropdown-info p:nth-child(1)').innerText;
+        const accommodation = this.querySelector('.dropdown-info p:nth-child(2)').innerText;
+        const guidedTours = this.querySelector('.dropdown-info p:nth-child(3)').innerText;
+        const ratings = '★★★★☆';  // Add a placeholder for ratings
 
-        // Style for the new content
-        const details = document.querySelector('.destination-details');
-        details.style.textAlign = 'center';
-        details.style.padding = '20px';
-        details.querySelector('h2').style.marginBottom = '20px';
-        details.querySelector('.details-content p').style.margin = '10px 0';
+        // Update the details section
+        document.getElementById('destination-details').style.display = 'flex';
+        document.getElementById('destination-fee').innerText = fee;
+        document.getElementById('destination-accommodation').innerText = accommodation;
+        document.getElementById('destination-guided').innerText = guidedTours;
+        document.getElementById('destination-ratings').innerText = ratings;
       });
     });
   </script>
 </body>
 </html>
+
+
 
        
 
