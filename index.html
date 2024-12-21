@@ -126,6 +126,7 @@
       transition: all 0.3s ease-in-out;
     }
 
+    /* Hover Effect to show the preview of the information */
     .dropdown:hover .dropdown-info {
       bottom: 0; /* Slides up on hover */
       opacity: 1;
@@ -139,15 +140,16 @@
       display: flex;
       justify-content: space-evenly;
       gap: 20px;
+      display: none; /* Hidden by default */
     }
 
     .destination-box {
-      background: rgba(0, 0, 0, 0.8);
+      background: #004477;  /* Matching background color of About section */
       border-radius: 10px;
       padding: 20px;
       width: 200px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      display: none;  /* Hidden by default */
     }
 
     .destination-box p {
@@ -192,120 +194,145 @@
 </head>
 <body>
   <!-- Hero Section -->
-  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;);">
+  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;">
     <h1 id="hero-title">Budget Breeze</h1>
     <div class="plane">
       <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
     </div>
-      <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
-    </div>
+    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+  </div>
 
   <!-- Dropdown Locations Section -->
   <div class="dropdown-container" id="dropdown-container">
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');" data-destination="Japan">
       <div class="dropdown-title">Japan</div>
       <div class="dropdown-info">
         <p>Fee: $275/adult</p>
         <p>Accommodation: Included</p>
         <p>Guided Tours: Yes</p>
+        <p>Ratings: 4.5/5</p>
       </div>
     </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');" data-destination="Spain">
       <div class="dropdown-title">Spain</div>
       <div class="dropdown-info">
         <p>Fee: $275/adult</p>
         <p>Accommodation: Included</p>
         <p>Guided Tours: Yes</p>
+        <p>Ratings: 4.8/5</p>
       </div>
     </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');" data-destination="Taiwan">
       <div class="dropdown-title">Taiwan</div>
       <div class="dropdown-info">
         <p>Fee: $345/adult</p>
         <p>Accommodation: Included</p>
         <p>Guided Tours: No</p>
+        <p>Ratings: 4.2/5</p>
       </div>
     </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');" data-destination="Philippines">
       <div class="dropdown-title">Philippines</div>
       <div class="dropdown-info">
         <p>Fee: $375/adult</p>
         <p>Accommodation: Included</p>
         <p>Guided Tours: Yes</p>
+        <p>Ratings: 4.7/5</p>
       </div>
     </div>
   </div>
 
-  <!-- Destination Details -->
-  <div class="destination-details" id="destination-details" style="display: none;">
-    <div class="destination-box">
-      <h3>Fee</h3>
+  <!-- Destination Details Section -->
+  <div class="destination-details" id="destination-details">
+    <div class="destination-box" id="destination-fee-box">
       <p id="destination-fee"></p>
     </div>
-    <div class="destination-box">
-      <h3>Accommodation</h3>
+    <div class="destination-box" id="destination-accommodation-box">
       <p id="destination-accommodation"></p>
     </div>
-    <div class="destination-box">
-      <h3>Guided Tours</h3>
+    <div class="destination-box" id="destination-guided-box">
       <p id="destination-guided"></p>
     </div>
-    <div class="destination-box">
-      <h3>Ratings</h3>
+    <div class="destination-box" id="destination-ratings-box">
       <p id="destination-ratings"></p>
     </div>
   </div>
 
   <!-- About Section -->
-  <div class="about" id="about">
+  <div class="about">
     <h2>About Budget Breeze</h2>
-    <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank. Whether you want to experience scenic views, outdoor adventures, or beachside relaxation, we have carefully selected locations that provide an unforgettable experience at an affordable price. Let us take you on a journey with unforgettable memories that you will cherish forever!</p>
+    <p>We help travelers explore affordable destinations worldwide, offering tailored packages that include guided tours, accommodation, and more. Join us in experiencing unique cultures while keeping your budget in check!</p>
   </div>
 
   <!-- Footer Section -->
   <footer>
-    <p>Contact us: 
-      <a href="mailto:budgetbreezeinquiry@gmail.com">budgetbreezeinquiry@gmail.com</a>
-    </p>
+    <p>Created by <a href="#">Your Name</a></p>
   </footer>
 
   <script>
-    // JavaScript Functionality
-    document.querySelectorAll('.dropdown').forEach((tile) => {
-      tile.addEventListener('click', function () {
-        // Hide all tiles
-        document.getElementById('dropdown-container').style.display = 'none';
+    // Data for each destination
+    const data = {
+      'Japan': {
+        fee: '$275/adult',
+        accommodation: 'Included',
+        guided: 'Yes',
+        ratings: '4.5/5'
+      },
+      'Spain': {
+        fee: '$275/adult',
+        accommodation: 'Included',
+        guided: 'Yes',
+        ratings: '4.8/5'
+      },
+      'Taiwan': {
+        fee: '$345/adult',
+        accommodation: 'Included',
+        guided: 'No',
+        ratings: '4.2/5'
+      },
+      'Philippines': {
+        fee: '$375/adult',
+        accommodation: 'Included',
+        guided: 'Yes',
+        ratings: '4.7/5'
+      }
+    };
 
-        // Get the background image of the clicked tile
-        const bgImage = this.style.backgroundImage;
+    // Event listener for dropdown clicks
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.addEventListener('click', () => {
+        const destination = dropdown.getAttribute('data-destination');
+        const destinationData = data[destination];
 
-        // Update the hero background with the clicked tile's background
-        const hero = document.querySelector('.hero');
-        hero.style.backgroundImage = bgImage;
-        hero.style.backgroundSize = 'cover';
-        hero.style.backgroundPosition = 'center';
+        // Show the destination details
+        document.getElementById('destination-fee').textContent = destinationData.fee;
+        document.getElementById('destination-accommodation').textContent = destinationData.accommodation;
+        document.getElementById('destination-guided').textContent = destinationData.guided;
+        document.getElementById('destination-ratings').textContent = destinationData.ratings;
 
-        // Get the name of the country and update the hero text
-        const countryName = this.querySelector('.dropdown-title').innerText;
-        document.getElementById('hero-title').innerText = countryName;
-
-        // Get the details of the clicked country
-        const fee = this.querySelector('.dropdown-info p:nth-child(1)').innerText;
-        const accommodation = this.querySelector('.dropdown-info p:nth-child(2)').innerText;
-        const guidedTours = this.querySelector('.dropdown-info p:nth-child(3)').innerText;
-        const ratings = '★★★★☆';  // Add a placeholder for ratings
-
-        // Update the details section
+        // Show the destination details container
         document.getElementById('destination-details').style.display = 'flex';
-        document.getElementById('destination-fee').innerText = fee;
-        document.getElementById('destination-accommodation').innerText = accommodation;
-        document.getElementById('destination-guided').innerText = guidedTours;
-        document.getElementById('destination-ratings').innerText = ratings;
+
+        // Hide all other tiles (dropdowns)
+        document.querySelectorAll('.dropdown').forEach(tile => {
+          tile.style.display = 'none';
+        });
+
+        // Show the relevant details box
+        document.getElementById('destination-fee-box').style.display = 'block';
+        document.getElementById('destination-accommodation-box').style.display = 'block';
+        document.getElementById('destination-guided-box').style.display = 'block';
+        document.getElementById('destination-ratings-box').style.display = 'block';
       });
     });
   </script>
 </body>
 </html>
+
+
+
+
+
 
 
 
