@@ -1,72 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Breeze - Interactive Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #002b42;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>Hello World!</title>
+    .hero {
+      background: linear-gradient(135deg, #1b2b4a, #004477);
+      color: white;
+      padding: 100px 50px;
+      text-align: center;
+      position: relative;
+      transition: background 0.5s ease;
+    }
 
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    .hero h1 {
+      font-size: 60px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+    }
 
-    <!-- The website JavaScript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <h1 class="title">Hello World!</h1>
-        <img
-          src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <div class="instructions">
-          <h2>Using this project</h2>
-          <p>
-            This is the Glitch <strong>Hello Website</strong> project. You can
-            use it to build your own site. Check out the code in the editor and open
-            the <span class="fileopener" data-file="TODO.md" data-line="0"
-              >TODO</span> for next steps!
-          </p>
-          <!--  🚧 TODO: ADD BUTTON HERE -->
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
 
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-        </div>
+    .plane {
+      position: absolute;
+      width: 150px;
+      top: 50%;
+      left: -200px;
+      animation: planeAnimation 5s infinite linear;
+    }
+
+    @keyframes planeAnimation {
+      0% {
+        left: -200px;
+      }
+      50% {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Dropdown Locations Section */
+    .dropdown-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 0;
+      gap: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      background-color: #007acc;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .dropdown:hover {
+      height: 350px; /* Expands on hover */
+    }
+
+    .dropdown-title {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+      z-index: 2;
+    }
+
+    .dropdown-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -100%; /* Hidden by default */
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .dropdown:hover .dropdown-info {
+      bottom: 0; /* Slides up on hover */
+      opacity: 1;
+    }
+
+    .dropdown-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 80px 50px;
+      background: #004477;
+      color: white;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .about p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Footer Section */
+    footer {
+      background: #003f66;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    footer a {
+      color: #f4f4f4;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 id="hero-title">Budget Breeze</h1>
+    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+    <div class="plane">
+      <img src="https://www.pngkey.com/png/detail/13-138255_airplane-top-view-png.png" alt="Airplane">
+    </div>
+  </div>
+
+  <!-- Dropdown Locations Section -->
+  <div class="dropdown-container">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
+      <div class="dropdown-title">Japan</div>
+      <div class="dropdown-info">
+        <p>Fee: $275/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
       </div>
     </div>
-    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
-    <footer class="footer">
-      <div class="links"></div>
-      <a
-        class="btn--remix"
-        target="_top"
-        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
-      >
-        <img
-          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
-          alt=""
-        />
-        Remix on Glitch
-      </a>
-    </footer>
-  </body>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
+      <div class="dropdown-title">Spain</div>
+      <div class="dropdown-info">
+        <p>Fee: $275/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
+      </div>
+    </div>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
+      <div class="dropdown-title">Taiwan</div>
+      <div class="dropdown-info">
+        <p>Fee: $345/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: No</p>
+      </div>
+    </div>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
+      <div class="dropdown-title">Philippines</div>
+      <div class="dropdown-info">
+        <p>Fee: $375/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="about" id="about">
+    <h2>About Budget Breeze</h2>
+    <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank. Whether you want to experience scenic views, outdoor adventures, or beachside relaxation, we have carefully selected locations that provide an unforgettable experience at an affordable price. Let us take you on a journey with unforgettable memories that you will cherish forever!</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Contact us: 
+      <a href="mailto:budgetbreezeinquiry@gmail.com">budgetbreezeinquiry@gmail.com</a>
+    </p>
+  </footer>
+
+  <script>
+    // JavaScript Functionality
+    document.querySelectorAll('.dropdown').forEach((tile) => {
+      tile.addEventListener('click', function () {
+        // Get the background image of the clicked tile
+        const bgImage = this.style.backgroundImage;
+
+        // Update the hero background with the clicked tile's background
+        const hero = document.querySelector('.hero');
+        hero.style.backgroundImage = bgImage;
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+
+        // Get the name of the country and update the hero text
+        const countryName = this.querySelector('.dropdown-title').innerText;
+        document.getElementById('hero-title').innerText = countryName;
+
+        // Replace the dropdown tiles with destination details
+        const container = document.querySelector('.dropdown-container');
+        container.innerHTML = `
+          <div class="destination-details">
+            <h2>${countryName}</h2>
+            <div class="details-content">
+              <p>Fee: $275/adult</p>
+              <p>Accommodation: Included</p>
+              <p>Guided Tours: Yes</p>
+              <p>Ratings: ★★★★☆</p>
+            </div>
+          </div>
+        `;
+
+        // Style for the new content
+        const details = document.querySelector('.destination-details');
+        details.style.textAlign = 'center';
+        details.style.padding = '20px';
+        details.querySelector('h2').style.marginBottom = '20px';
+        details.querySelector('.details-content p').style.margin = '10px 0';
+      });
+    });
+  </script>
+</body>
 </html>
+
+       
+
