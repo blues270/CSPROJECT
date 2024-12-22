@@ -177,7 +177,7 @@
     <h1 id="hero-title">Budget Breeze</h1>
     <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
     <div class="plane">
-      <img src="https://www.pngkey.com/png/detail/13-138255_airplane-top-view-png.png" alt="Airplane">
+      <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
     </div>
   </div>
                                                                                           
@@ -243,6 +243,7 @@
         hero.style.backgroundSize = 'cover';
         hero.style.backgroundPosition = 'center';
 
+        // Get the name of the country and update the hero text
         const countryName = this.querySelector('.dropdown-title').innerText;
         document.getElementById('hero-title').innerText = countryName;
 
@@ -259,6 +260,18 @@
             </div>
           </div>
         `;
+        // JavaScript to handle back navigation
+const backButton = document.getElementById('backButton');
+
+// Add an event listener to the button to handle the click event
+backButton.addEventListener('click', function() {
+    // Check if there's any page in the history to go back to
+    if (window.history.length > 1) {
+        window.history.back(); // Go back to the previous page
+    } else {
+        alert('No previous page in history'); // Alert if there's no page to go back to
+    }
+});
 
         // Style for the new content
         const details = document.querySelector('.destination-details');
