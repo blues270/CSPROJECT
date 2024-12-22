@@ -188,17 +188,32 @@
       color: #f4f4f4;
       text-decoration: underline;
     }
+
+    /* Go Back Button */
+    #go-back-btn {
+      display: none;
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #go-back-btn:hover {
+      background-color: #005f99;
+    }
   </style>
 </head>
 <body>
   <!-- Hero Section -->
-  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;);">
+  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;">
     <h1 id="hero-title">Budget Breeze</h1>
-    <div class="plane">
-      <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
-    </div>
-      <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
-    </div>
+    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+  </div>
 
   <!-- Dropdown Locations Section -->
   <div class="dropdown-container" id="dropdown-container">
@@ -248,64 +263,53 @@
     </div>
     <div class="destination-box">
       <h3>Guided Tours</h3>
-      <p id="destination-guided"></p>
+      <p id="destination-guided-tours"></p>
     </div>
     <div class="destination-box">
       <h3>Ratings</h3>
-      <p id="destination-ratings"></p>
+      <p id="ratings"></p>
     </div>
   </div>
 
   <!-- About Section -->
-  <div class="about" id="about">
+  <div class="about">
     <h2>About Budget Breeze</h2>
-    <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank. Whether you want to experience scenic views, outdoor adventures, or beachside relaxation, we have carefully selected locations that provide an unforgettable experience at an affordable price. Let us take you on a journey with unforgettable memories that you will cherish forever!</p>
+    <p>Budget Breeze is designed to help you find the best affordable destinations for travel. Whether you are looking for guided tours, accommodations, or exciting new places, we ensure to give you the most up-to-date deals. Travel more, spend less, and explore the world with Budget Breeze.</p>
   </div>
+
+  <!-- Go Back Button -->
+  <button id="go-back-btn" onclick="goBack()">Go Back</button>
 
   <!-- Footer Section -->
   <footer>
-    <p>For Inquiries or Bookings, Don't Hesitate to contact us! (Click the Contact Page): 
-      <a href="https://lofty-wise-drip.glitch.me" class="contact-link">Go to Contact Page</a>
-    </p>
-</footer>
+    <p>&copy; 2024 Budget Breeze | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+  </footer>
 
   <script>
-    // JavaScript Functionality
-    document.querySelectorAll('.dropdown').forEach((tile) => {
-      tile.addEventListener('click', function () {
-        // Hide all tiles
-        document.getElementById('dropdown-container').style.display = 'none';
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+      dropdown.addEventListener('click', function() {
+        const destination = this.querySelector('.dropdown-title').textContent;
+        const fee = this.querySelector('.dropdown-info p:nth-child(1)').textContent.split(":")[1].trim();
+        const accommodation = this.querySelector('.dropdown-info p:nth-child(2)').textContent.split(":")[1].trim();
+        const guidedTours = this.querySelector('.dropdown-info p:nth-child(3)').textContent.split(":")[1].trim();
 
-        // Get the background image of the clicked tile
-        const bgImage = this.style.backgroundImage;
-
-        // Update the hero background with the clicked tile's background
-        const hero = document.querySelector('.hero');
-        hero.style.backgroundImage = bgImage;
-        hero.style.backgroundSize = 'cover';
-        hero.style.backgroundPosition = 'center';
-
-        // Get the name of the country and update the hero text
-        const countryName = this.querySelector('.dropdown-title').innerText;
-        document.getElementById('hero-title').innerText = countryName;
-
-        // Get the details of the clicked country
-        const fee = this.querySelector('.dropdown-info p:nth-child(1)').innerText;
-        const accommodation = this.querySelector('.dropdown-info p:nth-child(2)').innerText;
-        const guidedTours = this.querySelector('.dropdown-info p:nth-child(3)').innerText;
-        const ratings = '★★★★☆';  // Add a placeholder for ratings
-
-        // Update the details section
         document.getElementById('destination-details').style.display = 'flex';
-        document.getElementById('destination-fee').innerText = fee;
-        document.getElementById('destination-accommodation').innerText = accommodation;
-        document.getElementById('destination-guided').innerText = guidedTours;
-        document.getElementById('destination-ratings').innerText = ratings;
+        document.getElementById('destination-fee').textContent = fee;
+        document.getElementById('destination-accommodation').textContent = accommodation;
+        document.getElementById('destination-guided-tours').textContent = guidedTours;
+
+        document.getElementById('go-back-btn').style.display = 'block';
       });
     });
+
+    function goBack() {
+      document.getElementById('destination-details').style.display = 'none';
+      document.getElementById('go-back-btn').style.display = 'none';
+    }
   </script>
 </body>
 </html>
+
 
 
 
