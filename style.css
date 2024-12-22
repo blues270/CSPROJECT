@@ -1,165 +1,143 @@
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #002b42;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #002b42;
+  color: #fffff;
+  overflow-x: hidden;
+}
 
-    .hero {
-      style = "background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v2.jpg?v=1734798111922');">
-      color: white;
-      padding: 100px 50px;
-      text-align: center;
-      position: relative;
-      transition: background 0.5s ease;
-    }
+.hero {
+  color: white;
+  padding: 100px 50px;
+  text-align: center;
+  position: relative;
+  transition: background 0.5s ease;
+}
 
-    .hero h1 {
-      font-size: 60px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
-    }
+.hero h1 {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+}
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 40px;
-      font-weight: 500;
-    }
+.hero p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
 
-    .plane {
-      position: absolute;
-      width: 150px;
-      top: 50%;
-      left: -200px;
-      animation: planeAnimation 5s infinite linear;
-    }
+.plane {
+  position: absolute;
+  width: 150px;
+  top: 50%;
+  left: -200px;
+  animation: planeAnimation 5s infinite linear;
+}
 
-    @keyframes planeAnimation {
-      0% {
-        left: -200px;
-      }
-      50% {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      100% {
-        left: 100%;
-      }
-    }
+@keyframes planeAnimation {
+  0% { left: -200px; }
+  50% { left: 50%; transform: translateX(-50%); }
+  100% { left: 100%; }
+}
 
-    /* Dropdown Locations Section */
-    .dropdown-container {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 50px 0;
-      gap: 20px;
-    }
+/* Dropdown Locations Section */
+.dropdown-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
 
-    .dropdown {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      background-color: #007acc;
-      color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease-in-out;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+.dropdown {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #007acc;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
 
-    .dropdown:hover {
-      height: 350px; /* Expands on hover */
-    }
+.dropdown:hover {
+  height: 350px;
+}
 
-    .dropdown-title {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 36px;
-      font-weight: 700;
-      color: white;
-      text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
-      z-index: 2;
-    }
+.dropdown-title {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+}
 
-    .dropdown-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      bottom: -100%; /* Hidden by default */
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      opacity: 0;
-      transition: all 0.3s ease-in-out;
-    }
+.dropdown-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
 
-    .dropdown:hover .dropdown-info {
-      bottom: 0; /* Slides up on hover */
-      opacity: 1;
-    }
+.dropdown:hover .dropdown-info {
+  bottom: 0;
+  opacity: 1;
+}
 
-    .dropdown-info p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
+/* About Section */
+.about {
+  padding: 80px 50px;
+  background: #004477;
+  color: white;
+  text-align: center;
+}
 
-    /* About Section */
-    .about {
-      padding: 80px 50px;
-      background: #004477;
-      color: white;
-      text-align: center;
-    }
+.about h2 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
 
-    .about h2 {
-      font-size: 48px;
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
+.about p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .about p {
-      font-size: 20px;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+/* Footer Section */
+footer {
+  background: #003f66;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
 
-    /* Footer Section */
-    footer {
-      background: #003f66;
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-    }
-
-    footer a {
-      color: #f4f4f4;
-      text-decoration: underline;
-    }
-  </style>
+footer a {
+  color: #f4f4f4;
+  text-decoration: underline;
+}
