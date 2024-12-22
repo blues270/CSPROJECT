@@ -229,7 +229,7 @@
       <a href="mailto:budgetbreezeinquiry@gmail.com">budgetbreezeinquiry@gmail.com</a>
     </p>
   </footer>
-<button id="backButton" style="font-size: 20px; padding: 10px 20px;">Go Back</button>
+
   <script>
     // JavaScript Functionality
     document.querySelectorAll('.dropdown').forEach((tile) => {
@@ -243,7 +243,6 @@
         hero.style.backgroundSize = 'cover';
         hero.style.backgroundPosition = 'center';
 
-        // Get the name of the country and update the hero text
         const countryName = this.querySelector('.dropdown-title').innerText;
         document.getElementById('hero-title').innerText = countryName;
 
@@ -268,15 +267,7 @@
         details.querySelector('h2').style.marginBottom = '20px';
         details.querySelector('.details-content p').style.margin = '10px 0';
       });
-      const button = document.getElementById('redirectButton');
-
-// Add an event listener for the 'click' event
-button.addEventListener('click', function() {
-    // Redirect the user to a different webpage
-    window.location.href = 'https://lofty-wise-drip.glitch.me';
-});
     });
-    
   </script>
 </body>
 </html>
