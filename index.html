@@ -260,18 +260,6 @@
             </div>
           </div>
         `;
-        // JavaScript to handle back navigation
-const backButton = document.getElementById('backButton');
-
-// Add an event listener to the button to handle the click event
-backButton.addEventListener('click', function() {
-    // Check if there's any page in the history to go back to
-    if (window.history.length > 1) {
-        window.history.back(); // Go back to the previous page
-    } else {
-        alert('No previous page in history'); // Alert if there's no page to go back to
-    }
-});
 
         // Style for the new content
         const details = document.querySelector('.destination-details');
@@ -282,13 +270,14 @@ backButton.addEventListener('click', function() {
       });
     });
   </script>
+  
+  <button id="backButton" style="font-size: 20px; padding: 10px 20px;">Go Back</button>
+  <script>
+   // JavaScript to handle back navigation
+    const backButton = document.getElementById('backButton');
+        });
+    </script>
+
+  
 </body>
 </html>
-
-
-
-
-
-
-       
-
