@@ -18,48 +18,10 @@
       color: #fff;
       overflow-x: hidden;
       position: relative;
-      padding-top: 60px; /* Adjust for fixed navbar */
     }
 
-    /* Navigation Bar Styling */
-    .navbar {
-      background-color: #003f66;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li {
-      margin: 0 15px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 10px 15px;
-      transition: background-color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background-color: #007acc;
-      border-radius: 5px;
-    }
-
-    /* Hero Section */
     .hero {
-      background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v2.jpg?v=1734798111922');
+      style = "background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v2.jpg?v=1734798111922');">
       color: white;
       padding: 100px 50px;
       text-align: center;
@@ -206,42 +168,64 @@
     footer a {
       color: #f4f4f4;
       text-decoration: underline;
+      
+     
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+   <header class="header">
+      <a href="#" class="logo">Logo</a>
+     
+      <nav class="navbar">
+          <a href="#">Home</nav>
+  
+        
+        <!-- Hero Section -->
+  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;);">
+    <h1 id="hero-title">Budget Breeze</h1>
+    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+    <div class="plane">
+      <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
+    </div>
   </div>
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Budget Breeze</h1>
-    <p>Affordable Travel, Unforgettable Memories</p>
-    <img src="plane-image.png" class="plane" alt="plane animation">
-  </div>
-
+                                                                                          
   <!-- Dropdown Locations Section -->
-  <div class="dropdown-container" id="destinations">
-    <a href="japan.html" class="dropdown" style="background-image: url('https://example.com/japan.jpg');">
+  <div class="dropdown-container">
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
       <div class="dropdown-title">Japan</div>
-    </a>
-    <a href="spain.html" class="dropdown" style="background-image: url('https://example.com/spain.jpg');">
+      <div class="dropdown-info">
+        <p>Fee: $275/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
+      </div>
+    </div>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
       <div class="dropdown-title">Spain</div>
-    </a>
-    <a href="taiwan.html" class="dropdown" style="background-image: url('https://example.com/taiwan.jpg');">
+      <div class="dropdown-info">
+        <p>Fee: $275/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
+      </div>
+    </div>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
       <div class="dropdown-title">Taiwan</div>
-    </a>
-    <a href="philippines.html" class="dropdown" style="background-image: url('https://example.com/philippines.jpg');">
+      <div class="dropdown-info">
+        <p>Fee: $345/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: No</p>
+      </div>
+    </div>
+    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
       <div class="dropdown-title">Philippines</div>
-    </a>
+      <div class="dropdown-info">
+        <p>Fee: $375/adult</p>
+        <p>Accommodation: Included</p>
+        <p>Guided Tours: Yes</p>
+      </div>
+    </div>
   </div>
+  
 
   <!-- About Section -->
   <div class="about" id="about">
@@ -251,11 +235,61 @@
 
   <!-- Footer Section -->
   <footer>
-    <p>Contact us: <a href="mailto:budgetbreezeinquiry@gmail.com">budgetbreezeinquiry@gmail.com</a></p>
-    <p>&copy; 2025 Budget Breeze</p>
+    <p>Contact us: 
+      <a href="https://lofty-wise-drip.glitch.me">budgetbreezeinquiry@gmail.com </a>
+    </p>
   </footer>
 
+  <script>
+    // JavaScript Functionality
+    document.querySelectorAll('.dropdown').forEach((tile) => {
+      tile.addEventListener('click', function () {
+        // Get the background image of the clicked tile
+        const bgImage = this.style.backgroundImage;
+
+        // Update the hero background with the clicked tile's background
+        const hero = document.querySelector('.hero');
+        hero.style.backgroundImage = bgImage;
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+
+        // Get the name of the country and update the hero text
+        const countryName = this.querySelector('.dropdown-title').innerText;
+        document.getElementById('hero-title').innerText = countryName;
+
+        // Replace the dropdown tiles with destination details
+        const container = document.querySelector('.dropdown-container');
+        container.innerHTML = `
+          <div class="destination-details">
+            <h2>${countryName}</h2>
+            <div class="details-content">
+              <p>Fee: $275/adult</p>
+              <p>Accommodation: Included</p>
+              <p>Guided Tours: Yes</p>
+              <p>Ratings: ★★★★☆</p>
+            </div>
+          </div>
+        `;
+
+        // Style for the new content
+        const details = document.querySelector('.destination-details');
+        details.style.textAlign = 'center';
+        details.style.padding = '20px';
+        details.querySelector('h2').style.marginBottom = '20px';
+        details.querySelector('.details-content p').style.margin = '10px 0';
+      });
+    });
+  </script>
+  
+<a href="https://humorous-chartreuse-holiday.glitch.me" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Go Back
+<a href="aboutus.html" class="myButton" style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+  Click Me
+</a>
+
+
+</a>
+  
 </body>
 </html>
-
-
