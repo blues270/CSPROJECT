@@ -151,9 +151,30 @@ header   {
   background: lightblue;
   }
 
- .about navbar a {
-  font-size: 48px;
-  color: #ffffff;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
+<style>
+      /* General navbar link styles */
+      .navbar a {
+          color: white; /* Default color for all links */
+          text-decoration: none; /* Remove underline */
+          padding: 10px; /* Adds padding for clickable area */
+          font-size: 18px; /* Default font size for links */
+      }
+
+      .navbar {
+          background-color: #333; /* Dark background for the navbar */
+          padding: 10px;
+      }
+
+      /* Specific style for the About link */
+      .navbar a.about {
+          font-size: 24px; /* Larger font size for the About link */
+          font-weight: bold; /* Make the font bold */
+          color: #f1c40f; /* Set a specific color (yellow-gold in this case) */
+      }
+
+      /* Hover effect to change the color when the user hovers over any link */
+      .navbar a:hover {
+          color: #f39c12; /* Change color on hover to a lighter shade */
+      }
+   </style>
+</body>
