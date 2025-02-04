@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    
     * {
       margin: 0;
       padding: 0;
@@ -20,8 +19,12 @@
       color: #fff;
       overflow-x: hidden;
       position: relative;
-    } 
-    
+    }
+
+    html {
+      scroll-behavior: smooth; /* Smooth scroll behavior */
+    }
+
     .hero {
       style = "background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v2.jpg?v=1734798111922');">
       color: white;
@@ -170,133 +173,128 @@
     footer a {
       color: #f4f4f4;
       text-decoration: underline;
-     
     }
-    
   </style>
 </head>
-  
+
 <body>
 <header class="navbar-header">
   <a href="#" class="logo">Logo</a>
   <nav class="navbar">
     <a href="#">Home</a>
-    <a href="#">About</a>
+    <a href="#about">About</a> <!-- Link to About Section -->
     <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="Contact.html">Contact</a>
     <a href="Data Privacy.html">Data Privacy</a>
   </nav>
-</header> 
-        
-    <!-- Hero Section -->
-  <div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;);">
-    <h1 id="hero-title">Budget Breeze</h1>
-    <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
-    <div class="plane">
-      <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
+</header>
+
+<!-- Hero Section -->
+<div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;">
+  <h1 id="hero-title">Budget Breeze</h1>
+  <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
+  <div class="plane">
+    <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
+  </div>
+</div>
+
+<!-- Dropdown Locations Section -->
+<div class="dropdown-container">
+  <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
+    <div class="dropdown-title">Japan</div>
+    <div class="dropdown-info">
+      <p>Fee: $275/adult</p>
+      <p>Accommodation: Included</p>
+      <p>Guided Tours: Yes</p>
     </div>
   </div>
-                                                                                          
-  <!-- Dropdown Locations Section -->
-  <div class="dropdown-container">
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
-      <div class="dropdown-title">Japan</div>
-      <div class="dropdown-info">
-        <p>Fee: $275/adult</p>
-        <p>Accommodation: Included</p>
-        <p>Guided Tours: Yes</p>
-      </div>
-    </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
-      <div class="dropdown-title">Spain</div>
-      <div class="dropdown-info">
-        <p>Fee: $275/adult</p>
-        <p>Accommodation: Included</p>
-        <p>Guided Tours: Yes</p>
-      </div>
-    </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
-      <div class="dropdown-title">Taiwan</div>
-      <div class="dropdown-info">
-        <p>Fee: $345/adult</p>
-        <p>Accommodation: Included</p>
-        <p>Guided Tours: No</p>
-      </div>
-    </div>
-    <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
-      <div class="dropdown-title">Philippines</div>
-      <div class="dropdown-info">
-        <p>Fee: $375/adult</p>
-        <p>Accommodation: Included</p>
-        <p>Guided Tours: Yes</p>
-      </div>
+  <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
+    <div class="dropdown-title">Spain</div>
+    <div class="dropdown-info">
+      <p>Fee: $275/adult</p>
+      <p>Accommodation: Included</p>
+      <p>Guided Tours: Yes</p>
     </div>
   </div>
-  
-
-  <!-- About Section -->
-  <div class="about" id="about">
-    <h2>About Budget Breeze</h2>
-    <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank. Whether you want to experience scenic views, outdoor adventures, or beachside relaxation, we have carefully selected locations that provide an unforgettable experience at an affordable price. Let us take you on a journey with unforgettable memories that you will cherish forever!</p>
+  <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
+    <div class="dropdown-title">Taiwan</div>
+    <div class="dropdown-info">
+      <p>Fee: $345/adult</p>
+      <p>Accommodation: Included</p>
+      <p>Guided Tours: No</p>
+    </div>
   </div>
+  <div class="dropdown" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
+    <div class="dropdown-title">Philippines</div>
+    <div class="dropdown-info">
+      <p>Fee: $375/adult</p>
+      <p>Accommodation: Included</p>
+      <p>Guided Tours: Yes</p>
+    </div>
+  </div>
+</div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>Contact us: 
-      <a href="https://lofty-wise-drip.glitch.me">budgetbreezeinquiry@gmail.com </a>
-    </p>
-  </footer>
+<!-- About Section -->
+<div class="about" id="about">
+  <h2>About Budget Breeze</h2>
+  <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank. Whether you want to experience scenic views, outdoor adventures, or beachside relaxation, we have carefully selected locations that provide an unforgettable experience at an affordable price. Let us take you on a journey with unforgettable memories that you will cherish forever!</p>
+</div>
 
-  <script>
-    // JavaScript Functionality
-    document.querySelectorAll('.dropdown').forEach((tile) => {
-      tile.addEventListener('click', function () {
-        // Get the background image of the clicked tile
-        const bgImage = this.style.backgroundImage;
+<!-- Footer Section -->
+<footer>
+  <p>Contact us: 
+    <a href="https://lofty-wise-drip.glitch.me">budgetbreezeinquiry@gmail.com </a>
+  </p>
+</footer>
 
-        // Update the hero background with the clicked tile's background
-        const hero = document.querySelector('.hero');
-        hero.style.backgroundImage = bgImage;
-        hero.style.backgroundSize = 'cover';
-        hero.style.backgroundPosition = 'center';
+<script>
+  // JavaScript Functionality
+  document.querySelectorAll('.dropdown').forEach((tile) => {
+    tile.addEventListener('click', function () {
+      // Get the background image of the clicked tile
+      const bgImage = this.style.backgroundImage;
 
-        // Get the name of the country and update the hero text
-        const countryName = this.querySelector('.dropdown-title').innerText;
-        document.getElementById('hero-title').innerText = countryName;
+      // Update the hero background with the clicked tile's background
+      const hero = document.querySelector('.hero');
+      hero.style.backgroundImage = bgImage;
+      hero.style.backgroundSize = 'cover';
+      hero.style.backgroundPosition = 'center';
 
-        // Replace the dropdown tiles with destination details
-        const container = document.querySelector('.dropdown-container');
-        container.innerHTML = `
-          <div class="destination-details">
-            <h2>${countryName}</h2>
-            <div class="details-content">
-              <p>Fee: $275/adult</p>
-              <p>Accommodation: Included</p>
-              <p>Guided Tours: Yes</p>
-              <p>Ratings: ★★★★☆</p>
-            </div>
+      // Get the name of the country and update the hero text
+      const countryName = this.querySelector('.dropdown-title').innerText;
+      document.getElementById('hero-title').innerText = countryName;
+
+      // Replace the dropdown tiles with destination details
+      const container = document.querySelector('.dropdown-container');
+      container.innerHTML = `
+        <div class="destination-details">
+          <h2>${countryName}</h2>
+          <div class="details-content">
+            <p>Fee: $275/adult</p>
+            <p>Accommodation: Included</p>
+            <p>Guided Tours: Yes</p>
+            <p>Ratings: ★★★★☆</p>
           </div>
-        `;
+        </div>
+      `;
 
-        // Style for the new content
-        const details = document.querySelector('.destination-details');
-        details.style.textAlign = 'center';
-        details.style.padding = '20px';
-        details.querySelector('h2').style.marginBottom = '20px';
-        details.querySelector('.details-content p').style.margin = '10px 0';
-      });
+      // Style for the new content
+      const details = document.querySelector('.destination-details');
+      details.style.textAlign = 'center';
+      details.style.padding = '20px';
+      details.querySelector('h2').style.marginBottom = '20px';
+      details.querySelector('.details-content p').style.margin = '10px 0';
     });
-  </script>
+  });
   
 <a href="https://humorous-chartreuse-holiday.glitch.me" 
    style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
    Go Back
+</a>
 <a href="Data Privacy.html" class="myButton" style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
   Data Privacy
 </a>
 
-
-</a>
-  
+</script>
 </body>
 </html>
