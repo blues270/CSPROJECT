@@ -150,23 +150,3 @@ header   {
   padding: 20px 100px;
   background: lightblue;
   }
-
-      .navbar a {
-color: white; 
-padding: 12px 20px; 
-font-size: 18px; 
-      }
-
-      .navbar {
-          background-color: #ffffff;
-          padding: 10px;
-      }
-
-      .navbar a.about{
-          font-size: 24px;
-          font-weight: bold;
-          color: #f1c40f; 
-      }
-
-
-
