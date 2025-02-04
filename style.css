@@ -142,11 +142,12 @@ footer a {
   text-decoration: underline;
 }
 
-header   {
+.header   {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 100px;
   background: lightblue;
+  z-index: 1000;
   }
