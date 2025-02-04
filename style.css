@@ -148,5 +148,16 @@ header   {
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  background: lightblue; /* You can change this to your desired background color */
-  
+  background: lightblue;
+  <style>
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .navbar {
+        background-color: #333;  color */
+        padding: 10px;
+    }
+</style>
