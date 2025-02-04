@@ -96,7 +96,7 @@ body {
   left: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 10px;
   opacity: 0;
@@ -134,7 +134,7 @@ footer {
   background: #003f66;
   padding: 20px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 footer a {
@@ -149,15 +149,10 @@ header   {
   width: 100%;
   padding: 20px 100px;
   background: lightblue;
-  <style>
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-    }
+  }
 
-    .navbar {
-        background-color: #333;  color */
+navbar a {
+        color: #ffffff;
+        text-decoration: underline; 
         padding: 10px;
     }
-</style>
