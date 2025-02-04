@@ -11,6 +11,15 @@ body {
   overflow-x: hidden;
 }
 
+.header {
+  position: fixed;
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  width: 100%; /* Full width of the page */
+  padding: 20px 100px; /* Adds padding for spacing inside the header */
+  background: lightblue; /* Light blue background */
+  }
+
 .hero {
   color: white;
   padding: 100px 50px;
@@ -141,13 +150,3 @@ footer a {
   color: #f4f4f4;
   text-decoration: underline;
 }
-
-.header   {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 100px;
-  background: lightblue;
-  z-index: 1000;
-  }
