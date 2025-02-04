@@ -142,13 +142,12 @@ footer a {
   text-decoration: underline;
 }
 
-.about header {
+/* Header Styling */
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  background: lightblue;
+  background: lightblue; /* You can change this to your desired background color */
   
-}
-/*About us Button 
