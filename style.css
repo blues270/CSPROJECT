@@ -152,10 +152,9 @@ header   {
   }
 
       .navbar a {
-          color: white;
-          text-decoration: none;
-          padding: 10px;
-          font-size: 18px;
+color: white; 
+padding: 12px 20px; 
+font-size: 18px; 
       }
 
       .navbar {
@@ -168,8 +167,6 @@ header   {
           font-weight: bold;
           color: #f1c40f; 
       }
-  .navbar a.home{
-          font-size: 24px;
-          font-weight: bold;
-          color: #f1c40f; 
-      }
+
+
+
