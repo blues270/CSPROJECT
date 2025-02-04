@@ -142,4 +142,10 @@ footer a {
   text-decoration: underline;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%
+}
 /*About us Button 
