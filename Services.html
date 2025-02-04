@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #1338BE;
-      color: #333;
+      background-color: #1F3B64; /* Combat Blue */
+      color: #fff;
     }
 
     /* Header and Navbar */
@@ -69,21 +69,21 @@
 
     /* Services Section */
     .services {
-      padding: 60px 20px;
+      padding: 60px 10%;
       text-align: center;
-      background-color: #fff;
+      background-color: #2A5C94; /* Blue instead of white */
     }
 
     .services h2 {
       font-size: 36px;
       margin-bottom: 40px;
-      color: #004477;
+      color: white; /* Keep text readable */
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
       justify-items: center;
     }
 
@@ -95,6 +95,8 @@
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 350px;
     }
 
     .service-card:hover {
@@ -123,9 +125,7 @@
       color: white;
       text-align: center;
       padding: 20px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
+      margin-top: 50px;
     }
 
     footer a {
@@ -142,13 +142,12 @@
       <h1>Budget Breeze</h1>
     </div>
     <nav class="navbar">
-      <a href="index.html">Home</a>
+      <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="Contact.html">Contact</a>
     </nav>
   </header>
-  
 
   <!-- Hero Section -->
   <div class="hero">
@@ -199,5 +198,13 @@
 
   <!-- FontAwesome CDN for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  <!-- Go Back and Data Privacy Buttons -->
+<a href="https://humorous-chartreuse-holiday.glitch.me" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Go Back
+</a>
+  
 </body>
 </html>
+
