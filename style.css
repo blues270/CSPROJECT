@@ -135,3 +135,44 @@ footer a {
   color: #f4f4f4;
   text-decoration: underline;
 }
+/* Header Styling */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 50px;
+  background: lightblue; /* Change this to your desired color */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.navbar-header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #002b42;
+}
+
+/* Navbar Links */
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #002b42;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007acc;
+}
+
