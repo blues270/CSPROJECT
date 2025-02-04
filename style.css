@@ -141,21 +141,22 @@ footer a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 50px;
+  padding: 20px 100px;
   background: lightblue; /* Change this to your desired color */
-  z-index: 1000;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
 }
 
 /* Logo */
 .navbar-header .logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 700;
   text-decoration: none;
-  color: #002b42;
+  color: #ffff;
 }
 
 /* Navbar Links */
@@ -166,7 +167,7 @@ footer a {
 
 .navbar a {
   text-decoration: none;
-  color: #002b42;
+  color: #fff;
   font-size: 18px;
   font-weight: 500;
   transition: color 0.3s ease;
