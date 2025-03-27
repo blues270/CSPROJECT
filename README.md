@@ -1,6 +1,6 @@
 For our website to be compatible in saving user data on a server. We will
 start introducing persistent user storage, that would essentially allow users
-to revisit any travel booking log or manage transactions for buying tickets. 
+to revisit any travel booking log or manage transactions for buying tickets.
 This would ensure that users would be able to log their booking history, retrieve
 any lost/bought tickets and check up with their travel plan dates. If we are successful
 in creating this data storage system for our website, the user's would have an easier
@@ -16,7 +16,7 @@ Data that would be saved:
 
 1. Type of Data - Travel Dashboard
    Purpose: To save the Booking Details of an user and to let the user
-   search, book 
+   search, book
    structure in JSON format:
    {
    "user_id": "text-string",
@@ -27,7 +27,7 @@ Data that would be saved:
    "ticket_price": "decimal",
    "payment_status": "paid/pending/cancelled",
    "seat_number": "text-string"
-}
+   }
 
 2. Type of Data - User Account
    Purpose: To let the user make an acoount, log in and access their travel dashboard
@@ -38,9 +38,6 @@ Data that would be saved:
    "password": "hashed-text-string",
    "email": "email-formatted-text-string",
    "profile_picture": "text-link-to-the-uploaded-pix"
-}
+   }
 
-
-
-
-
+![Alt text](https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/Username.png)
