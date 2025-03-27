@@ -6,10 +6,10 @@ any lost/bought tickets and check up with their travel plan dates. If we are suc
 in creating this data storage system for our website, the user's would have an easier
 and smoother experience when handling our website.
 
-The Plan is that, we would create 2 Main Webpages, "Travel Dashboard", and "Booking Management".
+The Plan is that, we would create 2 Main Webpages, "User Log in Credentials (index.html)", and "Booking Management".
 "Travel Dashboard", would be the webpage responsible for letting users, 1st log in to our website
-with ther credentials, and then it would also allow the user's to view, check and edit their travel
-bookings. "Booking Management", would be the webpage responsible for handling flight searches, ticket
+with ther credentials, and then it would also allow the user's to view, check and select their travel
+destinations. "Booking Management", would be the webpage responsible for handling flight searches, ticket
 selection and booking process for flights
 
 Data that would be saved:
