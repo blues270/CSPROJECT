@@ -12,6 +12,35 @@ with ther credentials, and then it would also allow the user's to view, check an
 bookings. "Booking Management", would be the webpage responsible for handling flight searches, ticket
 selection and booking process for flights
 
-Types of Data that would be saved:
+Data that would be saved:
+
+1. Type of Data - Booking Management
+   Purpose: To save the Booking Details of an user and to let the user
+   search, book 
+   structure in JSON format:
+   {
+   "user_id": "text-string",
+   "booking_id": "text-string",
+   "departure_city": "text-string",
+   "destination_city": "text-string",
+   "travel_date": "ISO 8601 datetime string",
+   "ticket_price": "decimal",
+   "payment_status": "paid/pending/cancelled",
+   "seat_number": "text-string"
+}
+
+2. Type of Data - User Account
+   Purpose: To let the user make an acoount, log in and access their travel dashboard
+   structure in JSON format:
+   {
+   "user_id": "text-string",
+   "username": "text-string",
+   "password": "hashed-text-string",
+   "email": "email-formatted-text-string",
+   "profile_picture": "text-link-to-the-uploaded-pix"
+}
+
+
+
 
 
