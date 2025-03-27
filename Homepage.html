@@ -51,6 +51,24 @@
       font-weight: 600;
       color: #fff;
     }
+
+    /* Go Back Button */
+    .go-back {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .go-back:hover {
+      background: #cc5500;
+    }
   </style>
 </head>
 
@@ -58,10 +76,10 @@
 
 <!-- User Profile (ONLY NEW ADDITION) -->
 <div class="user-profile">
-  <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/user-profile.png?v=YOUR_IMAGE_VERSION" 
-       alt="User Profile" class="profile-pic">
-  <span class="username">John Doe</span>
+  <img src="default.jpg" alt="User Profile" class="profile-pic">
+  <span id="username">#</span>
 </div>
+
 
 <header class="navbar-header">
   <a href="index.html" class="logo">
@@ -72,7 +90,7 @@
     <a href="#about">About</a>
     <a href="Services.html">Services</a>
     <a href="Contact.html">Contact</a>
-    <a href="Data Privacy.html">Data Privacy</a>
+    <a href="Data Privacy.html">Data Privacy</a> <!-- ✅ Restored -->
     <a href="Booking Management.html">Booking Management</a>
     <a href="index.html">User Account</a>
   </nav>
@@ -135,6 +153,16 @@
     <a href="https://lofty-wise-drip.glitch.me">budgetbreezeinquiry@gmail.com</a>
   </p>
 </footer>
+
+<a href="Homepage.html" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Go Back
+  </a>
+
+  <a href="Data Privacy.html" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Data Privacy
+  </a>
 
 <script>
   // JavaScript for Interactive Dropdowns (Unchanged)
