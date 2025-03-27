@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Breeze - Travel Dashboard</title>
+    <title>Travel Dashboard - Budget Breeze</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,6 +26,16 @@
         }
         .header h1 {
             color: #f8b400;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
         .dashboard {
             display: flex;
@@ -57,12 +67,49 @@
             background-color: #f8b400;
             color: black;
         }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            margin-right: 10px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background: #f8b400;
+            color: black;
+        }
+        /* Form Styles */
+        .booking-form {
+            background: #1b3a5e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        .booking-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #f8b400;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Budget Breeze Dashboard</h1>
-        <button onclick="logout()" style="background:#f8b400; padding:10px; border:none; cursor:pointer;">Logout</button>
+        <div class="profile">
+            <img id="profilePic" src="default.jpg" alt="Profile Picture">
+            <span id="username">User</span>
+        </div>
+        <button onclick="logout()">Logout</button>
     </div>
     <div class="container">
         <div class="dashboard">
@@ -79,6 +126,7 @@
                 <p>$<span id="totalSpent">0</span></p>
             </div>
         </div>
+
         <div class="booking-list">
             <h2>Your Bookings</h2>
             <table>
@@ -92,23 +140,60 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody id="bookingTable">
-                    <!-- Bookings will be displayed here -->
-                </tbody>
+                <tbody id="bookingTable"></tbody>
             </table>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <h2>Book a New Trip</h2>
+            <input type="text" id="bookingId" placeholder="Booking ID (Auto-generated)" readonly>
+            <input type="text" id="usernameInput" placeholder="Username">
+            
+            <label for="departure">Departure City:</label>
+            <select id="departure">
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Miami">Miami</option>
+            </select>
+
+            <label for="destination">Destination City:</label>
+            <select id="destination">
+                <option value="Chicago">Chicago</option>
+                <option value="New York">New York</option>
+                <option value="Miami">Miami</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+
+            <label for="travelDate">Travel Date:</label>
+            <input type="date" id="travelDate">
+
+            <label for="payment">Payment Method:</label>
+            <select id="payment">
+                <option value="Credit Card">Credit Card</option>
+                <option value="GCash">GCash</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+
+            <button onclick="confirmBooking()">Confirm Booking</button>
         </div>
     </div>
 
     <script>
-        const bookings = [
-            {"user_id": "123", "booking_id": "A1B2C3", "departure_city": "New York", "destination_city": "Chicago", "travel_date": "2025-04-15", "ticket_price": "250", "payment_status": "paid", "seat_number": "12A"},
-            {"user_id": "123", "booking_id": "D4E5F6", "departure_city": "Los Angeles", "destination_city": "Miami", "travel_date": "2025-03-10", "ticket_price": "180", "payment_status": "paid", "seat_number": "5C"}
-        ];
+        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (!user) {
+            alert("You must be logged in!");
+            window.location.href = "index.html";
+        } else {
+            document.getElementById("username").innerText = user.username;
+            document.getElementById("profilePic").src = user.profile_picture;
+        }
+
+        const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
         function loadBookings() {
-            let upcoming = 0;
-            let past = 0;
-            let totalSpent = 0;
             const tableBody = document.getElementById("bookingTable");
             tableBody.innerHTML = "";
 
@@ -122,28 +207,50 @@
                     <td>${booking.payment_status}</td>
                 </tr>`;
                 tableBody.innerHTML += row;
-
-                const today = new Date();
-                const travelDate = new Date(booking.travel_date);
-                if (travelDate >= today) {
-                    upcoming++;
-                } else {
-                    past++;
-                }
-                totalSpent += parseFloat(booking.ticket_price);
             });
 
-            document.getElementById("upcomingTrips").innerText = upcoming;
-            document.getElementById("pastTrips").innerText = past;
-            document.getElementById("totalSpent").innerText = totalSpent;
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+        }
+
+        function confirmBooking() {
+            const username = document.getElementById("usernameInput").value;
+            const departure = document.getElementById("departure").value;
+            const destination = document.getElementById("destination").value;
+            const travelDate = document.getElementById("travelDate").value;
+            const payment = document.getElementById("payment").value;
+
+            if (!username || !travelDate) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const bookingId = "BB" + Math.floor(Math.random() * 100000);
+            const newBooking = {
+                "booking_id": bookingId,
+                "departure_city": departure,
+                "destination_city": destination,
+                "travel_date": travelDate,
+                "ticket_price": "200",
+                "payment_status": payment
+            };
+
+            bookings.push(newBooking);
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+            loadBookings();
+            alert("Booking confirmed!");
         }
 
         function logout() {
-            alert("Logging out...");
+            localStorage.removeItem("loggedInUser");
             window.location.href = "index.html";
         }
 
         window.onload = loadBookings;
     </script>
 </body>
+  <!-- Go Back and Data Privacy Buttons -->
+<a href="Homepage.html" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Go Back
+</a>
 </html>
