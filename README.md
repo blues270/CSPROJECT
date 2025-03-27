@@ -14,7 +14,7 @@ selection and booking process for flights
 
 Data that would be saved:
 
-1. Type of Data - Booking Management
+1. Type of Data - Travel Dashboard
    Purpose: To save the Booking Details of an user and to let the user
    search, book 
    structure in JSON format:

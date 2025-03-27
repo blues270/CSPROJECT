@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Dashboard - Budget Breeze</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #0A2A43;
+            color: white;
+            margin: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #03253C;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            background: #074F71;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background: #0A7ABF;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            background: #074F71;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .booking-section {
+            background: #043954;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .upcoming-flights {
+            background: #043954;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Budget Breeze</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">Flights</a>
+        <a href="#">Bookings</a>
+        <a href="#">Support</a>
+        <a href="#">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="user-info">
+            <img src="https://via.placeholder.com/50" alt="User Profile">
+            <div>
+                <h3>John Doe</h3>
+                <p>Email: johndoe@example.com</p>
+            </div>
+        </div>
+        <div class="booking-section">
+            <h3>Book a Flight</h3>
+            <label>From: <input type="text" placeholder="Departure City"></label>
+            <label>To: <input type="text" placeholder="Destination City"></label>
+            <label>Date: <input type="date"></label>
+            <button>Search</button>
+        </div>
+        <div class="upcoming-flights">
+            <h3>Upcoming Flights</h3>
+            <ul>
+                <li>New York to Tokyo - 12th April 2025 - 10:30 AM</li>
+                <li>Los Angeles to London - 18th April 2025 - 5:45 PM</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
