@@ -9,4 +9,4 @@ and smoother experience when handling our website.
 The Plan is that, we would create 2 Main Webpages, "Travel Dashboard", and "Booking Management".
 "Travel Dashboard", would be the webpage responsible for letting users, 1st log in to our website
 with ther credentials, and then it would also allow the user's to view, check and edit their travel
-bookings. "Booking Management", would be the webpage responsible for 
+bookings. "Booking Management", would be the webpage responsible for handling flight searches
