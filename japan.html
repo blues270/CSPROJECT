@@ -66,43 +66,70 @@
       margin-top: 40px;
     }
 
-    .dropdown {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      width: 300px;
-    }
+/* Dropdown Container */
+.dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+  z-index: 10; /* Ensures dropdown stays below the Go Back button */
+}
 
-    .dropdown-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+/* Dropdown Box */
+.dropdown {
+  width: 250px;
+  height: 180px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
 
-    .dropdown-info p {
-      font-size: 18px;
-      margin: 5px 0;
-    }
+.dropdown:hover {
+  transform: scale(1.05);
+}
 
-    /* Back Button */
-    .go-back {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
-      padding: 10px 20px;
-      background: #ff6600;
-      color: white;
-      font-size: 18px;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* Dropdown Info */
+.dropdown-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: bottom 0.3s ease-in-out;
+}
 
-    .go-back:hover {
-      background: #cc5500;
-    }
+.dropdown:hover .dropdown-info {
+  bottom: 0;
+}
+
+/* Fix Go Back Button */
+.go-back {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000; /* Ensures Go Back button is always above everything */
+}
+
+.go-back:hover {
+  background: #cc5500;
+}
+
   </style>
 </head>
 
@@ -134,14 +161,16 @@
   <div class="dropdown">
     <div class="dropdown-title">Japan</div>
     <div class="dropdown-info">
-      <p>Fee: $275/adult</p>
+      <p>Fee: $350/adult</p>
       <p>Accommodation: Included</p>
       <p>Guided Tours: Yes</p>
     </div>
   </div>
 </div>
 
-<a href="index.html" class="go-back">Go Back</a>
+<a href="Homepage.html" 
+   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
+   Go Back
 
 </body>
 </html>
