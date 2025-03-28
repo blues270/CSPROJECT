@@ -64,7 +64,6 @@
      // Note: This website currently uses localStorage (aka the browser storage) for temporary storage of the user data.
     // User data (account details, bookings, etc.) would only be saved in the browser and would not go across different devices or after clearing browser storage.
    // Once your account is created, you would be able to log in your credentials, which will be retrieved from the browsers localStorage.
-  // In a real implementation, this data should be stored on a server with a secure database.
 
         function signup() {
             const username = document.getElementById("newUsername").value;
@@ -74,7 +73,7 @@
             const user = {
                 "user_id": Date.now().toString(),
                 "username": username,
-                "password": btoa(password), // Simple encoding (not secure for production)
+                "password": btoa(password), 
                 "email": email,
                 "profile_picture": "default.jpg"
             };
@@ -91,7 +90,7 @@
 
             if (storedUser && storedUser.username === username && atob(storedUser.password) === password) {
                 localStorage.setItem("loggedInUser", JSON.stringify(storedUser));
-                window.location.href = "Homepage.html"; // Redirect to dashboard
+                window.location.href = "Homepage.html"; 
             } else {
                 alert("Invalid login credentials!");
             }
