@@ -1,24 +1,22 @@
 4th Qtr:
 
-To allow our website to save user data on a server, we are modifying the persistent user storage 
+To allow our website to save user data on a server, we are modifying the persistent user storage
 system, which will have booking and account management functions.
-Budget Breeze users will indeed be able to view complete 
-flight information such as fare, baggage allowance and seat assignments. 
-Users will also be able to view aspects such as fare construction, fare basis codes and 
-payment details which will give the look and feel of airline-standard e-tickets right 
-within our platform. If the data storage model gets implemented well, it will provide a 
-streamlined travel booking experience to users in a professional way and will mark 
+Budget Breeze users will indeed be able to view complete
+flight information such as fare, baggage allowance and seat assignments.
+Users will also be able to view aspects such as fare construction, fare basis codes and
+payment details which will give the look and feel of airline-standard e-tickets right
+within our platform. If the data storage model gets implemented well, it will provide a
+streamlined travel booking experience to users in a professional way and will mark
 Budget Breeze reliable and user friendly.
 
-The Plan is to make one minor webpages and another web section within Services.html, a "Print Section" (printing section.html) that will show a format of a ticket
-with the given contents or credentials. Additionally, a "No Refund Policy" that will display
-a criteria for eligibity of refunding a ticket for restrictions and limitations of using the provided services. 
-
-
-
+The Plan is to make one minor webpages, a "No Refund Policy" that will display
+a criteria for eligibity of refunding a ticket for restrictions and limitations of using the provided services.
+With the three given criteria, the user will give a yes or no within limitations, there will be if-else conditions,
+that can allow eligibity to refund the ticket given.
 
 1. Type of Data - Flight Ticket Data
-   Purpose: To save credentials and show a preview of your given data within a 
+   Purpose: To save credentials and show a preview of your given data within a
    template of a ticket
    Structure in JSON Format:
    {
@@ -39,17 +37,24 @@ a criteria for eligibity of refunding a ticket for restrictions and limitations 
    Structure in JSON Format:
    {
    "Refunding One Day before Flight": "Y/N"
-     if "Refunding One Day before Flight" == "Y"{
-       console.log("Not Eligible for Refund")
-     } else {
-       console.log("Eligible for Refund")
-     }
-   "" 
-     
-     
+   if "Refunding One Day before Flight" == "Y"{
+   console.log("Not Eligible for Refund")
+   } else {
+   console.log("Eligible for Refund")
    }
-
-
+   "Unable to Travel due to Health": "Y/N"
+   if "Unable to Travel due to Health" == "Y"{
+   console.log("Not Eligible for Refund")
+   } else {
+   console.log("Eligible for Refund")
+   }
+   "Favorable Weather": "Y/N"
+   if "Favorable Weathert" == "Y"{
+   console.log("Eligible for Refund")
+   } else {
+   console.log("Not Eligible for Refund")
+   }
+   }
 
 ---------------------------Old Plans---------------------------
 
@@ -71,7 +76,6 @@ selection and booking process for flights
 
 Data that would be saved:
 
-
 1. Type of Data - User Account
    Purpose: To let the user make an acoount, log in and access their travel dashboard
    structure in JSON format:
@@ -84,6 +88,4 @@ Data that would be saved:
    }
 
 ![Alt text](https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/Username.png)
-![Alt text](https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/Username%20(1).png?v=1743093687412)
-
-          
+![Alt text](<https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/Username%20(1).png?v=1743093687412>)
