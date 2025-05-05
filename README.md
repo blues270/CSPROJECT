@@ -1,5 +1,17 @@
 4th Qtr:
-For our website 
+To allow our website to save user data on a server, we are adding a persistent user storage 
+system, which will have booking and account management functions as well as creation of fully detailed flight tickets. 
+Budget Breeze users will indeed be able to return to all of their travel histories, view recovered issued tickets, and view complete 
+flight information such as fare, baggage allowance and seat assignments. 
+Users will also be able to view aspects such as fare construction, fare basis codes and 
+payment details which will give the look and feel of airline-standard e-tickets right 
+within our platform. If the data storage model gets implemented well, it will provide a 
+streamlined travel booking experience to users in a professional way and will mark 
+Budget Breeze reliable and user friendly.
+
+1. Type of Data - 
+
+
 
 ---------------------------Old Plans---------------------------
 
