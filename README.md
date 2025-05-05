@@ -1,4 +1,5 @@
 4th Qtr:
+
 To allow our website to save user data on a server, we are modifying the persistent user storage 
 system, which will have booking and account management functions.
 Budget Breeze users will indeed be able to view complete 
@@ -9,7 +10,10 @@ within our platform. If the data storage model gets implemented well, it will pr
 streamlined travel booking experience to users in a professional way and will mark 
 Budget Breeze reliable and user friendly.
 
-The Plan is to make a "Print Section" that will show a format of a ticket with the given contents or credentials.
+The Plan is to make one minor webpages and another web section within Services.html, a "Print Section" (printing section.html) that will show a format of a ticket
+with the given contents or credentials. Additionally, a "No Refund Policy and Terms of Services" that will display
+a criteria for eligibity of refunding a ticket and the terms of services for restrictions and limitations
+of using the provided services. 
 
 
 
@@ -29,7 +33,8 @@ The Plan is to make a "Print Section" that will show a format of a ticket with t
    "Breakdown of Costs": "text-string"
    }
 
-2. 
+2. Type of Data - No Refund Policy and Terms of Services
+   Purpose: To 
 
 
 
