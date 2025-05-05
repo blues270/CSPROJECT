@@ -11,9 +11,8 @@ streamlined travel booking experience to users in a professional way and will ma
 Budget Breeze reliable and user friendly.
 
 The Plan is to make one minor webpages and another web section within Services.html, a "Print Section" (printing section.html) that will show a format of a ticket
-with the given contents or credentials. Additionally, a "No Refund Policy and Terms of Services" that will display
-a criteria for eligibity of refunding a ticket and the terms of services for restrictions and limitations
-of using the provided services. 
+with the given contents or credentials. Additionally, a "No Refund Policy" that will display
+a criteria for eligibity of refunding a ticket for restrictions and limitations of using the provided services. 
 
 
 
@@ -26,6 +25,7 @@ of using the provided services.
    "Name": "text-string",
    "Ticket_Number": "text-string"
    "Origin": "text-string"
+   "Date of Flight": "text-string"
    "Destination": "text-string"
    "Baggage Allowance": "integer, lbs"
    "Seat Assignment": "text-string"
@@ -33,8 +33,21 @@ of using the provided services.
    "Breakdown of Costs": "text-string"
    }
 
-2. Type of Data - No Refund Policy and Terms of Services
-   Purpose: To 
+2. Type of Data - No Refund Policy
+   Purpose: To display rules and limitations within the Services.html, that you can inquiry for a refund and a checklist or survey
+   on why you refunded your ticket and if it is eligible to refund
+   Structure in JSON Format:
+   {
+   "Refunding One Day before Flight": "Y/N"
+     if "Refunding One Day before Flight" == "Y"{
+       console.log("Not Eligible for Refund")
+     } else {
+       console.log("Eligible for Refund")
+     }
+   "" 
+     
+     
+   }
 
 
 
