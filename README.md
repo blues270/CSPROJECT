@@ -1,13 +1,18 @@
 4th Qtr:
-To allow our website to save user data on a server, we are adding a persistent user storage 
-system, which will have booking and account management functions as well as creation of fully detailed flight tickets. 
-Budget Breeze users will indeed be able to return to all of their travel histories, view recovered issued tickets, and view complete 
+To allow our website to save user data on a server, we are modifying the persistent user storage 
+system, which will have booking and account management functions.
+Budget Breeze users will indeed be able to view complete 
 flight information such as fare, baggage allowance and seat assignments. 
 Users will also be able to view aspects such as fare construction, fare basis codes and 
 payment details which will give the look and feel of airline-standard e-tickets right 
 within our platform. If the data storage model gets implemented well, it will provide a 
 streamlined travel booking experience to users in a professional way and will mark 
 Budget Breeze reliable and user friendly.
+
+The Plan is to make a "Print Section" that will show a format of a ticket with the given contents or credentials.
+
+
+
 
 1. Type of Data - Flight Ticket Data
    Purpose: To save credentials and show a preview of your given data within a 
@@ -16,12 +21,15 @@ Budget Breeze reliable and user friendly.
    {
    "Name": "text-string",
    "Ticket_Number": "text-string"
-
+   "Origin": "text-string"
+   "Destination": "text-string"
    "Baggage Allowance": "integer, lbs"
+   "Seat Assignment": "text-string"
    "Payment Method": "Cash or Card"
    "Breakdown of Costs": "text-string"
    }
-   
+
+2. 
 
 
 
