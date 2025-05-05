@@ -1,3 +1,10 @@
+4th Qtr:
+For our website 
+
+---------------------------Old Plans---------------------------
+
+3rd Qtr:
+
 For our website to be compatible in saving user data on a server. We will
 start introducing persistent user storage, that would essentially allow users
 to revisit any travel booking log or manage transactions for buying tickets.
