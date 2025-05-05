@@ -9,7 +9,19 @@ within our platform. If the data storage model gets implemented well, it will pr
 streamlined travel booking experience to users in a professional way and will mark 
 Budget Breeze reliable and user friendly.
 
-1. Type of Data - 
+1. Type of Data - Flight Ticket Data
+   Purpose: To save credentials and show a preview of your given data within a 
+   template of a ticket
+   Structure in JSON Format:
+   {
+   "Name": "text-string",
+   "Ticket_Number": "text-string"
+
+   "Baggage Allowance": "integer, lbs"
+   "Payment Method": "Cash or Card"
+   "Breakdown of Costs": "text-string"
+   }
+   
 
 
 
@@ -33,22 +45,8 @@ selection and booking process for flights
 
 Data that would be saved:
 
-1. Type of Data - Travel Dashboard
-   Purpose: To save the Booking Details of an user and to let the user
-   search, book
-   structure in JSON format:
-   {
-   "user_id": "text-string",
-   "booking_id": "text-string",
-   "departure_city": "text-string",
-   "destination_city": "text-string",
-   "travel_date": "ISO 8601 datetime string",
-   "ticket_price": "decimal",
-   "payment_status": "paid/pending/cancelled",
-   "seat_number": "text-string"
-   }
 
-2. Type of Data - User Account
+1. Type of Data - User Account
    Purpose: To let the user make an acoount, log in and access their travel dashboard
    structure in JSON format:
    {
