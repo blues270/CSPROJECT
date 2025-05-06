@@ -222,6 +222,12 @@
         });
 
         localStorage.setItem("bookings", JSON.stringify(bookings));
+<!-- Modal for viewing ticket -->
+<div id="ticketModal" style="display:none; position:fixed; top:20%; left:30%; background:white; border:1px solid #ccc; padding:20px;">
+  <span id="ticketInfo"></span>
+  <br>
+  <button onclick="closeModal()">Close</button>
+</div>
       }
 
       function confirmBooking() {
