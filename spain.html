@@ -1,176 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan - Budget Breeze</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan - Budget Breeze</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #002b42;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
-    }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #002b42;
+        color: #fff;
+        overflow-x: hidden;
+        position: relative;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    /* Navbar */
-    .navbar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background: rgba(0, 0, 0, 0.7);
-    }
+      /* Navbar */
+      .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, 0.7);
+      }
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-    }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: 500;
+      }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background-size: cover;
-      background-position: center;
-    }
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background-size: cover;
+        background-position: center;
+      }
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: bold;
-    }
+      .hero h1 {
+        font-size: 48px;
+        font-weight: bold;
+      }
 
-    .hero p {
-      font-size: 20px;
-    }
+      .hero p {
+        font-size: 20px;
+      }
 
-    /* Country Info Section */
-    .dropdown-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 40px;
-    }
+      /* Country Info Section */
+      .dropdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+      }
 
-/* Dropdown Container */
-.dropdown-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 30px;
-  position: relative;
-  z-index: 10; /* Ensures dropdown stays below the Go Back button */
-}
+      /* Dropdown Container */
+      .dropdown-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        position: relative;
+        z-index: 10; /* Ensures dropdown stays below the Go Back button */
+      }
 
-/* Dropdown Box */
-.dropdown {
-  width: 250px;
-  height: 180px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
+      /* Dropdown Box */
+      .dropdown {
+        width: 250px;
+        height: 180px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
 
-.dropdown:hover {
-  transform: scale(1.05);
-}
+      .dropdown:hover {
+        transform: scale(1.05);
+      }
 
-/* Dropdown Info */
-.dropdown-info {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px;
-  text-align: center;
-  transition: bottom 0.3s ease-in-out;
-}
+      /* Dropdown Info */
+      .dropdown-info {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        transition: bottom 0.3s ease-in-out;
+      }
 
-.dropdown:hover .dropdown-info {
-  bottom: 0;
-}
+      .dropdown:hover .dropdown-info {
+        bottom: 0;
+      }
 
-/* Fix Go Back Button */
-.go-back {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background: #ff6600;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 1000; /* Ensures Go Back button is always above everything */
-}
+      /* Fix Go Back Button */
+      .go-back {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: #ff6600;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 1000; /* Ensures Go Back button is always above everything */
+      }
 
-.go-back:hover {
-  background: #cc5500;
-}
+      .go-back:hover {
+        background: #cc5500;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body>
+    <header class="navbar-header">
+      <a href="index.html" class="logo">
+        <img
+          src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/BUDGET%20BREEZE%20(250%20x%20150%20px)%20(1).png?v=1738721113149"
+          alt="Budget Breeze Logo"
+        />
+      </a>
+      <nav class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="#about">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Data Privacy.html">Data Privacy</a>
+        <a href="Booking Management.html">Booking Management</a>
+        <a href="index.html">User Account</a>
+      </nav>
+    </header>
 
-<body>
-
-<header class="navbar-header">
-  <a href="index.html" class="logo">
-    <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/BUDGET%20BREEZE%20(250%20x%20150%20px)%20(1).png?v=1738721113149" alt="Budget Breeze Logo">
-  </a>
-  <nav class="navbar">
-    <a href="Homepage.html">Home</a>
-    <a href="#about">About</a>
-    <a href="Services.html">Services</a>
-    <a href="Contact.html">Contact</a>
-    <a href="Data Privacy.html">Data Privacy</a> 
-    <a href="Booking Management.html">Booking Management</a>
-    <a href="index.html">User Account</a>
-  </nav>
-</header>
-
-<!-- Hero Section -->
-<div class="hero" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg');">
-  <h1>Spain</h1>
-  <p>Experience the beauty of Japan with our all-inclusive travel package!</p>
-</div>
-
-<!-- Country Details -->
-<div class="dropdown-container">
-  <div class="dropdown">
-    <div class="dropdown-title">Spain</div>
-    <div class="dropdown-info">
-      <p>Fee: $570/adult</p>
-      <p>Accommodation: Included</p>
-      <p>Guided Tours: Yes</p>
+    <!-- Hero Section -->
+    <div
+      class="hero"
+      style="
+        background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg');
+      "
+    >
+      <h1>Spain</h1>
+      <p>
+        Experience the beauty of Japan with our all-inclusive travel package!
+      </p>
     </div>
-  </div>
-</div>
 
-<a href="Homepage.html" 
-   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
-   Go Back
+    <!-- Country Details -->
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <div class="dropdown-title">Spain</div>
+        <div class="dropdown-info">
+          <p>Fee: $570/adult</p>
+          <p>Accommodation: Included</p>
+          <p>Guided Tours: Yes</p>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <a
+      href="Homepage.html"
+      style="
+        font-size: 22px;
+        font-family: Arial, sans-serif;
+        color: #fffff0;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 2px solid #fffff0;
+        border-radius: 5px;
+        display: inline-block;
+      "
+    >
+      Go Back
+    </a>
+  </body>
 </html>

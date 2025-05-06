@@ -1,210 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Budget Breeze</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Budget Breeze</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #1F3B64; /* Combat Blue */
-      color: #fff;
-    }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #1f3b64; /* Combat Blue */
+        color: #fff;
+      }
 
-    /* Header and Navbar */
-    header {
-      background-color: #004477;
-      padding: 20px 0;
-      color: white;
-      text-align: center;
-    }
+      /* Header and Navbar */
+      header {
+        background-color: #004477;
+        padding: 20px 0;
+        color: white;
+        text-align: center;
+      }
 
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      font-size: 18px;
-    }
+      .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 18px;
+      }
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
 
-    .navbar a:hover {
-      background-color: #1E3A8A;
-    }
+      .navbar a:hover {
+        background-color: #1e3a8a;
+      }
 
-    /* Hero Section */
-    .hero {
-      background-image: url('https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 0;
-      color: white;
-      text-align: center;
-    }
+      /* Hero Section */
+      .hero {
+        background-image: url("https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+      }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
-    }
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+      }
 
-    .hero p {
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
+      .hero p {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
 
-    /* Services Section */
-    .services {
-      padding: 60px 10%;
-      text-align: center;
-      background-color: #2A5C94; /* Blue instead of white */
-    }
+      /* Services Section */
+      .services {
+        padding: 60px 10%;
+        text-align: center;
+        background-color: #2a5c94; /* Blue instead of white */
+      }
 
-    .services h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: white; /* Keep text readable */
-    }
+      .services h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: white; /* Keep text readable */
+      }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 50px;
-      justify-items: center;
-    }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        justify-items: center;
+      }
 
-    .service-card {
-      background-color: #007acc;
-      color: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 350px;
-    }
+      .service-card {
+        background-color: #007acc;
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        max-width: 350px;
+      }
 
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
 
-    .service-card i {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+      .service-card i {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
 
-    .service-card h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
+      .service-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
 
-    .service-card p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
+      .service-card p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
 
-    /* Footer */
-    footer {
-      background-color: #004477;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
+      /* Footer */
+      footer {
+        background-color: #004477;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
 
-    footer a {
-      color: #f4f4f4;
-      text-decoration: underline;
-    }
+      footer a {
+        color: #f4f4f4;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <h1>Budget Breeze</h1>
+      </div>
+      <nav class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+    </header>
 
-  </style>
-</head>
-<body>
-  <!-- Header Section -->
-  <header>
-    <div class="logo">
-      <h1>Budget Breeze</h1>
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Our Services</h1>
+      <p>
+        Explore the variety of services we offer to make your travel experience
+        memorable and affordable.
+      </p>
     </div>
-    <nav class="navbar">
-      <a href="Homepage.html">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Our Services</h1>
-    <p>Explore the variety of services we offer to make your travel experience memorable and affordable.</p>
-  </div>
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <h2>What We Offer</h2>
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <i class="fas fa-plane"></i>
+          <h3>Flight Booking</h3>
+          <p>
+            Get the best flight deals to your dream destinations with our
+            easy-to-use flight booking service.
+          </p>
+        </div>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <h2>What We Offer</h2>
-    <div class="services-grid">
-      <!-- Service Card 1 -->
-      <div class="service-card">
-        <i class="fas fa-plane"></i>
-        <h3>Flight Booking</h3>
-        <p>Get the best flight deals to your dream destinations with our easy-to-use flight booking service.</p>
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <i class="fas fa-hotel"></i>
+          <h3>Hotel Reservations</h3>
+          <p>
+            Book your accommodation effortlessly, ensuring comfort and
+            convenience throughout your stay.
+          </p>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Destination Planning</h3>
+          <p>
+            Let us help you plan your itinerary with the best destinations,
+            tours, and activities suited to your interests.
+          </p>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card">
+          <i class="fas fa-life-ring"></i>
+          <h3>Travel Insurance</h3>
+          <p>
+            Ensure your peace of mind while traveling with our affordable and
+            comprehensive travel insurance plans.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <!-- Service Card 2 -->
-      <div class="service-card">
-        <i class="fas fa-hotel"></i>
-        <h3>Hotel Reservations</h3>
-        <p>Book your accommodation effortlessly, ensuring comfort and convenience throughout your stay.</p>
-      </div>
+    <!-- Footer Section -->
+    <footer>
+      <p>
+        Contact us:
+        <a href="mailto:budgetbreezeinquiry@gmail.com"
+          >budgetbreezeinquiry@gmail.com</a
+        >
+      </p>
+    </footer>
 
-      <!-- Service Card 3 -->
-      <div class="service-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Destination Planning</h3>
-        <p>Let us help you plan your itinerary with the best destinations, tours, and activities suited to your interests.</p>
-      </div>
+    <!-- FontAwesome CDN for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-      <!-- Service Card 4 -->
-      <div class="service-card">
-        <i class="fas fa-life-ring"></i>
-        <h3>Travel Insurance</h3>
-        <p>Ensure your peace of mind while traveling with our affordable and comprehensive travel insurance plans.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>Contact us: 
-      <a href="mailto:budgetbreezeinquiry@gmail.com">budgetbreezeinquiry@gmail.com</a>
-    </p>
-  </footer>
-
-  <!-- FontAwesome CDN for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  
-  <!-- Go Back and Data Privacy Buttons -->
-<a href="Homepage.html" 
-   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
-   Go Back
-</a>
-  
-</body>
+    <!-- Go Back and Data Privacy Buttons -->
+    <a
+      href="Homepage.html"
+      style="
+        font-size: 22px;
+        font-family: Arial, sans-serif;
+        color: #fffff0;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 2px solid #fffff0;
+        border-radius: 5px;
+        display: inline-block;
+      "
+    >
+      Go Back
+    </a>
+  </body>
 </html>
-

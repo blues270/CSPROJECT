@@ -1,184 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budget Breeze - Interactive Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #002b42;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Profile Section */
-    .user-profile {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 12px;
-      border-radius: 8px;
-      z-index: 1000;
-    }
-
-    .profile-pic {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-
-    .username {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    /* Go Back Button */
-    .go-back {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      padding: 10px 20px;
-      background: #ff6600;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .go-back:hover {
-      background: #cc5500;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- User Profile -->
-<div class="user-profile">
-  <img src="default.jpg" alt="User Profile" class="profile-pic">
-  <span id="username">#</span>
-</div>
-
-<header class="navbar-header">
-  <a href="index.html" class="logo">
-    <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/BUDGET%20BREEZE%20(250%20x%20150%20px)%20(1).png?v=1738721113149" alt="Budget Breeze Logo">
-  </a>
-  <nav class="navbar">
-    <a href="Homepage.html">Home</a>
-    <a href="#about">About</a>
-    <a href="Services.html">Services</a>
-    <a href="Contact.html">Contact</a>
-    <a href="Data Privacy.html">Data Privacy</a> 
-    <a href="Booking Management.html">Booking Management</a>
-    <a href="index.html">User Account</a>
-  </nav>
-</header>
-
-<!-- Hero Section -->
-<div class="hero" style="background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635); background-repeat: no-repeat; background-size: cover;">
-  <h1 id="hero-title">Budget Breeze</h1>
-  <p id="hero-description">Explore Affordable Destinations with the Best Deals</p>
-  <div class="plane">
-    <img src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453">
-  </div>
-</div>
-
-<!-- Dropdown Locations -->
-<div class="dropdown-container">
-  <div class="dropdown" data-country="japan" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');">
-    <div class="dropdown-title">Japan</div>
-    <div class="dropdown-info">
-      <p>Fee: $275/adult</p>
-      <p>Accommodation: Included</p>
-      <p>Guided Tours: Yes</p>
-    </div>
-  </div>
-  <div class="dropdown" data-country="spain" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');">
-    <div class="dropdown-title">Spain</div>
-    <div class="dropdown-info">
-      <p>Fee: $275/adult</p>
-      <p>Accommodation: Included</p>
-      <p>Guided Tours: Yes</p>
-    </div>
-  </div>
-  <div class="dropdown" data-country="taiwan" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');">
-    <div class="dropdown-title">Taiwan</div>
-    <div class="dropdown-info">
-      <p>Fee: $345/adult</p>
-      <p>Accommodation: Included</p>
-      <p>Guided Tours: No</p>
-    </div>
-  </div>
-  <div class="dropdown" data-country="philippines" style="background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');">
-    <div class="dropdown-title">Philippines</div>
-    <div class="dropdown-info">
-      <p>Fee: $375/adult</p>
-      <p>Accommodation: Included</p>
-      <p>Guided Tours: Yes</p>
-    </div>
-  </div>
-</div>
-
-<!-- About Section -->
-<div class="about" id="about">
-  <h2>About Budget Breeze</h2>
-  <p>Budget Breeze is dedicated to making travel affordable and enjoyable for those who wish to explore new destinations without breaking the bank...</p>
-</div>
-
-<!-- Footer -->
-<footer>
-  <p>Contact us: 
-    <a href="https://lofty-wise-drip.glitch.me">budgetbreezeinquiry@gmail.com</a>
-  </p>
-</footer>
-
-<!-- Go Back and Data Privacy Buttons -->
-<a href="Homepage.html" 
-   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
-   Go Back
-<!-- Go Back and Data Privacy Buttons -->
-<a href="Data Privacy.html" 
-   style="font-size: 22px; font-family: Arial, sans-serif; color: #FFFFF0; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #FFFFF0; border-radius: 5px; display: inline-block;">
-   Data Privacy
-
-<script>
-  // JavaScript for Interactive Dropdowns (Fixed)
-  document.querySelectorAll('.dropdown').forEach((tile) => {
-    tile.addEventListener('click', function () {
-      const country = this.dataset.country;
-
-      // Redirect only to the selected country's page
-      if (country) {
-        window.location.href = `${country}.html`;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Breeze - Interactive Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    });
-  });
-</script>
-<body>
-<html>
-</body> 
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #002b42;
+        color: #fff;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Profile Section */
+      .user-profile {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 8px 12px;
+        border-radius: 8px;
+        z-index: 1000;
+      }
+
+      .profile-pic {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+
+      .username {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      /* Go Back Button */
+      .go-back {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: #ff6600;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .go-back:hover {
+        background: #cc5500;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- User Profile -->
+    <div class="user-profile">
+      <img src="default.jpg" alt="User Profile" class="profile-pic" />
+      <span id="username">#</span>
+    </div>
+
+    <header class="navbar-header">
+      <a href="index.html" class="logo">
+        <img
+          src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/BUDGET%20BREEZE%20(250%20x%20150%20px)%20(1).png?v=1738721113149"
+          alt="Budget Breeze Logo"
+        />
+      </a>
+      <nav class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="#about">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Data Privacy.html">Data Privacy</a>
+        <a href="Booking Management.html">Booking Management</a>
+        <a href="index.html">User Account</a>
+        <a href="Printing.js">Printing</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div
+      class="hero"
+      style="
+        background-image: url(https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/banner%20sample_v4.jpg?v=1734799283635);
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <h1 id="hero-title">Budget Breeze</h1>
+      <p id="hero-description">
+        Explore Affordable Destinations with the Best Deals
+      </p>
+      <div class="plane">
+        <img
+          src="https://cdn.glitch.global/d76985b4-9558-442d-9584-0aa5a5f79119/airplane_2.png?v=1734801261453"
+        />
+      </div>
+    </div>
+
+    <!-- Dropdown Locations -->
+    <div class="dropdown-container">
+      <div
+        class="dropdown"
+        data-country="japan"
+        style="
+          background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/japan.jpeg?v=1734768396082');
+        "
+      >
+        <div class="dropdown-title">Japan</div>
+        <div class="dropdown-info">
+          <p>Fee: $275/adult</p>
+          <p>Accommodation: Included</p>
+          <p>Guided Tours: Yes</p>
+        </div>
+      </div>
+      <div
+        class="dropdown"
+        data-country="spain"
+        style="
+          background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/spain.jpg?v=1734768805369');
+        "
+      >
+        <div class="dropdown-title">Spain</div>
+        <div class="dropdown-info">
+          <p>Fee: $275/adult</p>
+          <p>Accommodation: Included</p>
+          <p>Guided Tours: Yes</p>
+        </div>
+      </div>
+      <div
+        class="dropdown"
+        data-country="taiwan"
+        style="
+          background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/taiwan-photos22.webp?v=1734769725148');
+        "
+      >
+        <div class="dropdown-title">Taiwan</div>
+        <div class="dropdown-info">
+          <p>Fee: $345/adult</p>
+          <p>Accommodation: Included</p>
+          <p>Guided Tours: No</p>
+        </div>
+      </div>
+      <div
+        class="dropdown"
+        data-country="philippines"
+        style="
+          background-image: url('https://cdn.glitch.global/f8d4130a-5bdf-470c-93aa-e414a44ae5e8/Philippines.webp?v=1734769799711');
+        "
+      >
+        <div class="dropdown-title">Philippines</div>
+        <div class="dropdown-info">
+          <p>Fee: $375/adult</p>
+          <p>Accommodation: Included</p>
+          <p>Guided Tours: Yes</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about" id="about">
+      <h2>About Budget Breeze</h2>
+      <p>
+        Budget Breeze is dedicated to making travel affordable and enjoyable for
+        those who wish to explore new destinations without breaking the bank...
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Contact us:
+        <a href="https://lofty-wise-drip.glitch.me"
+          >budgetbreezeinquiry@gmail.com</a
+        >
+      </p>
+    </footer>
+
+    <!-- Go Back and Data Privacy Buttons -->
+    <a
+      href="Homepage.html"
+      style="
+        font-size: 22px;
+        font-family: Arial, sans-serif;
+        color: #fffff0;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 2px solid #fffff0;
+        border-radius: 5px;
+        display: inline-block;
+      "
+    >
+      Go Back
+      <!-- Go Back and Data Privacy Buttons -->
+      <a
+        href="Data Privacy.html"
+        style="
+          font-size: 22px;
+          font-family: Arial, sans-serif;
+          color: #fffff0;
+          font-weight: bold;
+          text-decoration: none;
+          padding: 10px 20px;
+          border: 2px solid #fffff0;
+          border-radius: 5px;
+          display: inline-block;
+        "
+      >
+        Data Privacy
+
+        <script>
+          // JavaScript for Interactive Dropdowns (Fixed)
+          document.querySelectorAll(".dropdown").forEach((tile) => {
+            tile.addEventListener("click", function () {
+              const country = this.dataset.country;
+
+              // Redirect only to the selected country's page
+              if (country) {
+                window.location.href = `${country}.html`;
+              }
+            });
+          });
+        </script>
+      </a></a
+    >
+  </body>
 </html>
-
-
-
