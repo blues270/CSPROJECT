@@ -1,164 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #091540, #1B3A61);
-            color: white;
-        }
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #091540, #1b3a61);
+        color: white;
+      }
 
-        .email-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px #00D1FF;
-            width: 350px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
+      .email-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px #00d1ff;
+        width: 350px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+      }
 
-        h1 {
-            margin-bottom: 1.5rem;
-            color: #00D1FF;
-        }
+      h1 {
+        margin-bottom: 1.5rem;
+        color: #00d1ff;
+      }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+      .form-group {
+        margin-bottom: 1rem;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
 
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #00D1FF;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            outline: none;
-            font-size: 1rem;
-            color: white;
-        }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #00d1ff;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        outline: none;
+        font-size: 1rem;
+        color: white;
+      }
 
-        textarea {
-            resize: none;
-            height: 100px;
-        }
+      textarea {
+        resize: none;
+        height: 100px;
+      }
 
-        .send-button {
-            background: #00D1FF;
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
+      .send-button {
+        background: #00d1ff;
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
 
-        .send-button:hover {
-            background: #006D9C;
-            transform: scale(1.05);
-        }
+      .send-button:hover {
+        background: #006d9c;
+        transform: scale(1.05);
+      }
 
-        .status-message {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+      .status-message {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
 
-        .status-message.show {
-            opacity: 1;
-        }
+      .status-message.show {
+        opacity: 1;
+      }
 
-        .status-message.success {
-            color: lightgreen;
-        }
+      .status-message.success {
+        color: lightgreen;
+      }
 
-        .status-message.error {
-            color: red;
-        }
+      .status-message.error {
+        color: red;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="email-container">
-        <h1>Contact Us</h1>
+      <h1>Contact Us</h1>
 
-        <form id="contact-form">
-            <input type="hidden" name="contact_number" value="697483">
-            
-            <div class="form-group">
-                <label for="user_name">Name</label>
-                <input type="text" name="name" id="name" required>
-            </div>
+      <form id="contact-form">
+        <input type="hidden" name="contact_number" value="697483" />
 
-            <div class="form-group">
-                <label for="user_email">Email</label>
-                <input type="email" name="user_email" id="user_email" required>
-            </div>
+        <div class="form-group">
+          <label for="user_name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
 
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" required></textarea>
-            </div>
+        <div class="form-group">
+          <label for="user_email">Email</label>
+          <input type="email" name="user_email" id="user_email" required />
+        </div>
 
-            <button type="submit" class="send-button">Send</button>
-        </form>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
 
-        <div id="statusMessage" class="status-message"></div>
+        <button type="submit" class="send-button">Send</button>
+      </form>
 
-        <!-- Go Back Button -->
-        <button onclick="window.history.back();">Go Back</button>
+      <div id="statusMessage" class="status-message"></div>
+
+      <!-- Go Back Button -->
+      <button onclick="window.history.back();">Go Back</button>
     </div>
 
     <script>
-        window.onload = function () {
-            emailjs.init("6_91tP4AtmFuORvqb");
+      window.onload = function () {
+        emailjs.init("6_91tP4AtmFuORvqb");
 
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-                const form = this;
-                const statusMessage = document.getElementById('statusMessage');
+            const form = this;
+            const statusMessage = document.getElementById("statusMessage");
 
-                statusMessage.textContent = '';
-                statusMessage.className = 'status-message';
+            statusMessage.textContent = "";
+            statusMessage.className = "status-message";
 
-                emailjs.sendForm('service_j78ttai', 'template_esd792j', form)
-                    .then(() => {
-                        statusMessage.textContent = 'Email sent successfully!';
-                        statusMessage.classList.add('show', 'success');
-                        form.reset();
-                        return emailjs.send('service_j78ttai', 'auto_reply_template', {
-                            user_name: form.user_name.value,
-                            user_email: form.user_email.value,
-                            message: form.message.value
-                        });
-                    })
-                    .then(() => {
-                        console.log('Auto-reply sent successfully');
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        statusMessage.textContent = 'Something went wrong, but your email was likely sent. Please check your inbox.';
-                        statusMessage.classList.add('show', 'error');
-                    });
-            });
-        };
+            emailjs
+              .sendForm("service_j78ttai", "template_esd792j", form)
+              .then(() => {
+                statusMessage.textContent = "Email sent successfully!";
+                statusMessage.classList.add("show", "success");
+                form.reset();
+                return emailjs.send("service_j78ttai", "auto_reply_template", {
+                  user_name: form.user_name.value,
+                  user_email: form.user_email.value,
+                  message: form.message.value,
+                });
+              })
+              .then(() => {
+                console.log("Auto-reply sent successfully");
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                statusMessage.textContent =
+                  "Something went wrong, but your email was likely sent. Please check your inbox.";
+                statusMessage.classList.add("show", "error");
+              });
+          });
+      };
     </script>
-</body>
+  </body>
 </html>

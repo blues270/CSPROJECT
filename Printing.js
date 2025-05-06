@@ -66,5 +66,6 @@ function generateTicket(bookingData) {
             </div>
         </div>
     `;
-  return ticketHTML;
+
+    return ticketHTML;
 }
