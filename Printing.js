@@ -69,3 +69,16 @@ function generateTicket(bookingData) {
   return ticketHTML;
 }
 
+// Sample booking data
+const bookingData = {
+  username: "John Doe",
+  booking_id: "A123456",
+  departure_city: "Manila",
+  destination_city: "Cebu",
+  travel_date: "2025-05-20"
+};
+
+// Render ticket on page
+document.getElementById("ticket-container").innerHTML = generateTicket(bookingData);
+
+
