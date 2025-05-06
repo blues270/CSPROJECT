@@ -149,7 +149,7 @@
             <h2>Book a New Trip</h2>
             <input type="text" id="bookingId" placeholder="Booking ID (Auto-generated)" readonly>
             <input type="text" id="usernameInput" placeholder="Username">
-            
+
             <label for="departure">Departure City:</label>
             <select id="departure">
                 <option value="New York">New York</option>
@@ -181,6 +181,7 @@
         </div>
     </div>
 
+    <script src="ticketGenerator.js"></script>
     <script>
         const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
@@ -206,6 +207,7 @@
                     <td>${booking.travel_date}</td>
                     <td>$${booking.ticket_price}</td>
                     <td>${booking.payment_status}</td>
+                    <td><button onclick="viewTicket(${JSON.stringify(booking)})">View Ticket</button></td>
                 </tr>`;
                 tableBody.innerHTML += row;
             });
@@ -238,7 +240,19 @@
             bookings.push(newBooking);
             localStorage.setItem("bookings", JSON.stringify(bookings));
             loadBookings();
-            alert("Booking confirmed!");
+            // Generate and display ticket
+            const ticketHTML = generateTicket(newBooking);
+            const ticketContainer = document.createElement('div');
+            ticketContainer.innerHTML = ticketHTML;
+            document.body.appendChild(ticketContainer);
+            alert("Booking confirmed! Your ticket has been generated.");
+        }
+
+        function viewTicket(booking) {
+            const ticketHTML = generateTicket(booking);
+            const ticketContainer = document.createElement('div');
+            ticketContainer.innerHTML = ticketHTML;
+            document.body.appendChild(ticketContainer);
         }
 
         function logout() {
