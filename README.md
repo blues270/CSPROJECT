@@ -31,7 +31,7 @@ that can allow eligibity to refund the ticket given.
    "Breakdown of Costs": "text-string"
    }
 
-2. Type of Data - No Refund Policy
+2. Type of Data - No Refund Policy (Eligibility)
    Purpose: To display rules and limitations within the Services.html, that you can inquiry for a refund and a checklist or survey
    on why you refunded your ticket and if it is eligible to refund
    Structure in JSON Format:

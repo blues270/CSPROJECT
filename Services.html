@@ -205,6 +205,41 @@
         </div>
       </div>
     </section>
+<h3>Refund Eligibility Survey</h3>
+<form id="refundForm">
+  <label>
+    Refunding One Day before Flight:
+    <select id="oneDayBefore">
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+    </select>
+  </label><br><br>
+
+  <label>
+    Unable to Travel due to Health:
+    <select id="healthIssue">
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+    </select>
+  </label><br><br>
+
+  <label>
+    Favorable Weather:
+    <select id="goodWeather">
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+    </select>
+  </label><br><br>
+
+  <button type="button" onclick="checkRefundEligibility()">Check Refund Eligibility</button>
+</form>
+
+<!-- Modal to show eligibility result -->
+<div id="refundModal" style="display:none; position:fixed; top:20%; left:30%; background:white; border:1px solid #ccc; padding:20px;">
+  <span id="refundResult"></span>
+  <br><br>
+  <button onclick="closeRefundModal()">Close</button>
+</div>
 
     <!-- Footer Section -->
     <footer>
