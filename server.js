@@ -1,25 +1,90 @@
-// Step 3: Require/Loads the express module
-const express = require("express");
-// body-parser is used to read data payload from the http request body
-const bodyParser = require("body-parser");
-//  path is used to set default directories for MVC and also for the static files
-const path = require("path");
-// include the defined package
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs').promises;
+const path = require('path');
 
-// Step 4: Creates our express server
 const app = express();
 
-//Serves static files inside the public folder
-app.use(express.static(path.join(__dirname, "public")));
-app.set("view engine", "hbs");
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
 
-//Sets a basic route index.hbs when website initially starts and when home is clicked from the nav bar or whenever a process needs to go back to home
-app.get("/", (req, res) => {
-  res.render("index.hbs");
+// View engine setup
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Data file path
+const DATA_FILE = path.join(__dirname, 'data', 'bookings.json');
+
+// Ensure data directory exists
+async function ensureDataDir() {
+  const dir = path.join(__dirname, 'data');
+  try {
+    await fs.access(dir);
+  } catch {
+    await fs.mkdir(dir);
+  }
+}
+
+// Read bookings data
+async function readBookings() {
+  try {
+    const data = await fs.readFile(DATA_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      await fs.writeFile(DATA_FILE, '[]');
+      return [];
+    }
+    throw error;
+  }
+}
+
+// Write bookings data
+async function writeBookings(bookings) {
+  await fs.writeFile(DATA_FILE, JSON.stringify(bookings, null, 2));
+}
+
+// Routes
+app.get('/', (req, res) => {
+  res.render('index');
 });
 
-// Step 5: Start HTTP Server on a port number 3000
-// This will create a web service for your own project
-const port = 3000;
-app.listen(port, () => console.log(`App listening to port ${port}`));
+// Get all bookings
+app.get('/bookings', async (req, res) => {
+  try {
+    const bookings = await readBookings();
+    res.render('bookings', { bookings });
+  } catch (error) {
+    res.status(500).send('Error reading bookings');
+  }
+});
+
+// Create new booking
+app.post('/bookings', async (req, res) => {
+  try {
+    const bookings = await readBookings();
+    const newBooking = {
+      id: Date.now().toString(),
+      ...req.body,
+      createdAt: new Date().toISOString()
+    };
+    bookings.push(newBooking);
+    await writeBookings(bookings);
+    res.redirect('/bookings');
+  } catch (error) {
+    res.status(500).send('Error creating booking');
+  }
+});
+
+// Initialize server
+async function init() {
+  await ensureDataDir();
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
+
+init().catch(console.error);
