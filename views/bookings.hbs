@@ -1,0 +1,50 @@
+<h1>Bookings</h1>
+
+{{#if bookings.length}}
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #fff; padding: 10px;">ID</th>
+                <th style="border: 1px solid #fff; padding: 10px;">From</th>
+                <th style="border: 1px solid #fff; padding: 10px;">To</th>
+                <th style="border: 1px solid #fff; padding: 10px;">Date</th>
+                <th style="border: 1px solid #fff; padding: 10px;">Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each bookings}}
+            <tr>
+                <td style="border: 1px solid #fff; padding: 10px;">{{this.id}}</td>
+                <td style="border: 1px solid #fff; padding: 10px;">{{this.from}}</td>
+                <td style="border: 1px solid #fff; padding: 10px;">{{this.to}}</td>
+                <td style="border: 1px solid #fff; padding: 10px;">{{this.date}}</td>
+                <td style="border: 1px solid #fff; padding: 10px;">{{this.createdAt}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>No bookings found.</p>
+{{/if}}
+
+<h2>Create New Booking</h2>
+<form action="/bookings" method="POST" style="margin-top: 20px;">
+    <div style="margin-bottom: 15px;">
+        <label for="from">From:</label><br>
+        <input type="text" id="from" name="from" required style="padding: 8px; width: 100%; margin-top: 5px;">
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        <label for="to">To:</label><br>
+        <input type="text" id="to" name="to" required style="padding: 8px; width: 100%; margin-top: 5px;">
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" required style="padding: 8px; width: 100%; margin-top: 5px;">
+    </div>
+    
+    <button type="submit" style="background: #007acc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+        Create Booking
+    </button>
+</form>
